@@ -8,6 +8,11 @@
     <meta name="description" content="Ayshan Musfik - Founder of CodeZorex & Full-Stack Developer specializing in Laravel, Livewire, Tailwind CSS, MySQL, and modern business systems.">
     <meta name="author" content="Ayshan Musfik">
 
+    <!-- Brand Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="alternate icon" href="{{ asset('favicon.svg') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.svg') }}">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
