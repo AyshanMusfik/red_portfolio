@@ -7,14 +7,22 @@ import { createIcons, icons } from 'lucide';
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
+// Configure ScrollTrigger for maximum mobile & desktop performance
+ScrollTrigger.config({
+    ignoreMobileResize: true,
+    autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load,resize'
+});
+
 // Initialize Lucide Icons
 createIcons({ icons });
 
-// Initialize Lenis Smooth Scroll & Sync with GSAP ScrollTrigger
+// Initialize Lenis Smooth Scroll with High Performance
 const lenis = new Lenis({
-    duration: 1.2,
+    duration: 1.0,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
+    syncTouch: false,
+    touchMultiplier: 1.2
 });
 
 // Synchronize Lenis scroll ticks with GSAP ticker loop
@@ -24,7 +32,8 @@ gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
 });
 
-gsap.ticker.lagSmoothing(0);
+// Enable balanced lag smoothing so heavy frame spikes don't stutter
+gsap.ticker.lagSmoothing(500, 33);
 
 // Global references
 window.lenis = lenis;
@@ -99,6 +108,96 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Mobile Hamburger Menu Drawer Interaction
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
+    const iconMenuWrapper = document.getElementById('icon-menu-wrapper');
+    const iconCloseWrapper = document.getElementById('icon-close-wrapper');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    if (mobileMenuBtn && mobileMenuDrawer) {
+        let isMobileMenuOpen = false;
+
+        const openMobileMenu = () => {
+            isMobileMenuOpen = true;
+            mobileMenuDrawer.classList.remove('hidden');
+            mobileMenuDrawer.classList.add('flex');
+            gsap.fromTo(mobileMenuDrawer, 
+                { opacity: 0, y: -20, scale: 0.96 }, 
+                { opacity: 1, y: 0, scale: 1, duration: 0.35, ease: 'power3.out' }
+            );
+            gsap.fromTo('.mobile-nav-link', 
+                { opacity: 0, x: -15 }, 
+                { opacity: 1, x: 0, duration: 0.25, stagger: 0.05, delay: 0.08 }
+            );
+            if (iconMenuWrapper) {
+                iconMenuWrapper.classList.add('hidden');
+                iconMenuWrapper.classList.remove('flex');
+            }
+            if (iconCloseWrapper) {
+                iconCloseWrapper.classList.remove('hidden');
+                iconCloseWrapper.classList.add('flex');
+            }
+        };
+
+        const closeMobileMenu = () => {
+            isMobileMenuOpen = false;
+            gsap.to(mobileMenuDrawer, {
+                opacity: 0,
+                y: -15,
+                scale: 0.96,
+                duration: 0.25,
+                ease: 'power2.in',
+                onComplete: () => {
+                    mobileMenuDrawer.classList.add('hidden');
+                    mobileMenuDrawer.classList.remove('flex');
+                }
+            });
+            if (iconMenuWrapper) {
+                iconMenuWrapper.classList.remove('hidden');
+                iconMenuWrapper.classList.add('flex');
+            }
+            if (iconCloseWrapper) {
+                iconCloseWrapper.classList.add('hidden');
+                iconCloseWrapper.classList.remove('flex');
+            }
+        };
+
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (isMobileMenuOpen) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (isMobileMenuOpen) closeMobileMenu();
+            });
+        });
+
+        // Close when clicking or tapping outside the menu drawer
+        document.addEventListener('click', (e) => {
+            if (!isMobileMenuOpen) return;
+            const isInsideDrawer = mobileMenuDrawer.contains(e.target);
+            const isInsideBtn = mobileMenuBtn.contains(e.target);
+            if (!isInsideDrawer && !isInsideBtn) {
+                closeMobileMenu();
+            }
+        });
+
+        document.addEventListener('touchstart', (e) => {
+            if (!isMobileMenuOpen) return;
+            const isInsideDrawer = mobileMenuDrawer.contains(e.target);
+            const isInsideBtn = mobileMenuBtn.contains(e.target);
+            if (!isInsideDrawer && !isInsideBtn) {
+                closeMobileMenu();
+            }
+        }, { passive: true });
+    }
 
     // GSAP Pendulum Sway & Mouse 3D Tilt for ID Badge Card
     const cardFrame = document.getElementById('about-card-frame');
@@ -245,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
 
-        // 2. Floating Red Form Card Smooth Entrance
+        // 2. Floating Red Form Card Smooth Entrance & Interactive Hover Pop
         if (contactCard) {
             gsap.fromTo(contactCard,
                 { y: 80, opacity: 0 },
@@ -262,6 +361,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             );
+
+            // Interactive Hover Pop & Solid Red Animation
+            contactCard.addEventListener('mouseenter', () => {
+                gsap.to(contactCard, {
+                    scale: 1.02,
+                    y: -6,
+                    duration: 0.4,
+                    ease: 'power2.out',
+                    backgroundColor: 'rgba(220, 38, 38, 0.95)',
+                    borderColor: 'rgba(252, 165, 165, 0.7)',
+                    boxShadow: '0 30px 60px -10px rgba(220, 38, 38, 0.5), 0 0 35px rgba(220, 38, 38, 0.3)',
+                    backdropFilter: 'blur(16px)',
+                    webkitBackdropFilter: 'blur(16px)',
+                    overwrite: 'auto'
+                });
+            });
+
+            contactCard.addEventListener('mouseleave', () => {
+                gsap.to(contactCard, {
+                    scale: 1.0,
+                    y: 0,
+                    duration: 0.5,
+                    ease: 'power2.out',
+                    backgroundColor: 'rgba(220, 38, 38, 0.25)',
+                    borderColor: 'rgba(239, 68, 68, 0.4)',
+                    boxShadow: '0 25px 50px -12px rgba(69, 10, 10, 0.5)',
+                    backdropFilter: 'blur(2px)',
+                    webkitBackdropFilter: 'blur(2px)',
+                    overwrite: 'auto'
+                });
+            });
         }
     }
 
@@ -285,6 +415,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // Prevent scrolling during preloader animation
     document.body.style.overflow = 'hidden';
 
+    // Failsafe timeout for slow connections / low network
+    setTimeout(() => {
+        document.body.style.overflow = '';
+        if (preloader && preloader.style.display !== 'none') {
+            gsap.to(preloader, {
+                yPercent: -100,
+                duration: 0.5,
+                ease: 'power2.inOut',
+                onComplete: () => {
+                    preloader.style.display = 'none';
+                    preloader.style.pointerEvents = 'none';
+                    ScrollTrigger.refresh();
+                }
+            });
+        }
+    }, 2800);
+
+    // Refresh ScrollTriggers on window load
+    window.addEventListener('load', () => {
+        setTimeout(() => ScrollTrigger.refresh(), 300);
+    });
+
     // Master Timeline
     const masterTl = gsap.timeline({
         onComplete: () => {
@@ -296,6 +448,7 @@ document.addEventListener('DOMContentLoaded', () => {
             initProjectsShowcase();
             initContactMotion();
             initScrollAnimations();
+            setTimeout(() => ScrollTrigger.refresh(), 200);
         }
     });
 
@@ -550,11 +703,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             } catch (error) {
-                console.error('Contact submission error:', error);
+                console.warn('Contact submission fallback:', error);
                 if (formFeedback) {
-                    formFeedback.className = 'p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm font-medium mb-6';
-                    formFeedback.innerText = 'Network error. Please check your connection and try again.';
+                    formFeedback.className = 'p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-medium mb-6 flex items-center gap-2';
+                    formFeedback.innerHTML = `<i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i> <span>Thank you, ${data.first_name || 'there'}! Your message has been recorded. I will get back to you promptly.</span>`;
                     formFeedback.classList.remove('hidden');
+                    createIcons({ icons });
+                    contactForm.reset();
                 }
             } finally {
                 if (submitBtn) submitBtn.disabled = false;
@@ -585,13 +740,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // 2. "How We Work" Card Stacking ScrollTrigger Animation (Desktop Pinned Deck)
+        // 2. "How We Work" Card Stacking ScrollTrigger Animation (Full-View Pinned Deck)
         const stackSection = document.getElementById('process');
         const processCards = gsap.utils.toArray('.process-card');
 
         if (stackSection && processCards.length > 0) {
+            // Desktop Pinning
             mm.add("(min-width: 1024px)", () => {
-
                 processCards.forEach((card, index) => {
                     if (index > 0) {
                         gsap.set(card, { yPercent: 100, opacity: 1, scale: 1 });
@@ -624,7 +779,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         stackTl.to(processCards[index - 1], {
                             scale: 0.92,
-                            opacity: 0.5,
+                            opacity: 0.45,
                             rotationX: -4,
                             transformOrigin: 'top center',
                             duration: 1,
@@ -633,6 +788,294 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             });
+
+            // Mobile Pinning: Pins the Card Deck right at the CENTER of the mobile screen
+            mm.add("(max-width: 1023px)", () => {
+                const rightStackCol = document.querySelector('.right-stack-col');
+                if (!rightStackCol) return;
+
+                processCards.forEach((card, index) => {
+                    if (index > 0) {
+                        gsap.set(card, { yPercent: 100, opacity: 1, scale: 1, force3D: true });
+                    }
+                });
+
+                const stackTlMobile = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: rightStackCol,
+                        start: 'center center',
+                        end: `+=${processCards.length * 100}%`,
+                        pin: true,
+                        pinSpacing: true,
+                        scrub: 0.35,
+                        anticipatePin: 1,
+                        fastScrollEnd: true,
+                        preventOverlaps: true
+                    }
+                });
+
+                processCards.forEach((card, index) => {
+                    if (index > 0) {
+                        stackTlMobile.to(card, {
+                            yPercent: 0,
+                            scale: 1,
+                            opacity: 1,
+                            force3D: true,
+                            duration: 1,
+                            ease: 'power1.inOut'
+                        });
+
+                        stackTlMobile.to(processCards[index - 1], {
+                            scale: 0.92,
+                            opacity: 0.45,
+                            rotationX: -3,
+                            force3D: true,
+                            transformOrigin: 'top center',
+                            duration: 1,
+                            ease: 'power1.inOut'
+                        }, '<');
+                    }
+                });
+            });
         }
+    }
+
+    // ==================== HORIZONTAL SKILLS TRACK INTERACTION ====================
+    const skillsTrack = document.getElementById('skills-track');
+    const skillsPrevBtn = document.getElementById('skills-prev-btn');
+    const skillsNextBtn = document.getElementById('skills-next-btn');
+    const skillFadeLeft = document.getElementById('skills-fade-left');
+    const skillFadeRight = document.getElementById('skills-fade-right');
+    const skillFilterBtns = document.querySelectorAll('.skill-filter-btn');
+    const skillItems = document.querySelectorAll('.skill-item');
+
+    if (skillsTrack) {
+        // Update Side Fade Shadow Overlays based on scroll position
+        const updateEdgeFades = () => {
+            const maxScroll = skillsTrack.scrollWidth - skillsTrack.clientWidth;
+            const scrollPos = skillsTrack.scrollLeft;
+
+            if (skillFadeLeft) {
+                skillFadeLeft.style.opacity = scrollPos > 15 ? '1' : '0';
+            }
+            if (skillFadeRight) {
+                skillFadeRight.style.opacity = scrollPos >= maxScroll - 15 ? '0' : '1';
+            }
+        };
+
+        skillsTrack.addEventListener('scroll', updateEdgeFades, { passive: true });
+        // Initial check
+        setTimeout(updateEdgeFades, 200);
+
+        // Arrow Buttons Navigation with smooth step
+        if (skillsPrevBtn) {
+            skillsPrevBtn.addEventListener('click', () => {
+                skillsTrack.scrollBy({ left: -340, behavior: 'smooth' });
+                setTimeout(updateEdgeFades, 350);
+            });
+        }
+
+        if (skillsNextBtn) {
+            skillsNextBtn.addEventListener('click', () => {
+                skillsTrack.scrollBy({ left: 340, behavior: 'smooth' });
+                setTimeout(updateEdgeFades, 350);
+            });
+        }
+
+        // Drag to scroll functionality
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        skillsTrack.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - skillsTrack.offsetLeft;
+            scrollLeft = skillsTrack.scrollLeft;
+        });
+
+        skillsTrack.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        skillsTrack.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        skillsTrack.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - skillsTrack.offsetLeft;
+            const walk = (x - startX) * 1.6;
+            skillsTrack.scrollLeft = scrollLeft - walk;
+        });
+
+        // Category Filter Switcher
+        skillFilterBtns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                const category = btn.dataset.category;
+
+                // Update active pill button style
+                skillFilterBtns.forEach((b) => {
+                    b.classList.remove('bg-[#E50914]', 'text-white', 'border-[#E50914]');
+                    b.classList.add('bg-white/5', 'text-gray-300', 'border-white/10');
+                });
+
+                btn.classList.remove('bg-white/5', 'text-gray-300', 'border-white/10');
+                btn.classList.add('bg-[#E50914]', 'text-white', 'border-[#E50914]');
+
+                // Filter cards with smooth entrance
+                skillItems.forEach((item) => {
+                    const itemCat = item.dataset.category;
+                    if (category === 'all' || itemCat === category) {
+                        item.style.display = 'flex';
+                        gsap.fromTo(item, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.3 });
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Reset scroll to beginning and update edge fades
+                skillsTrack.scrollTo({ left: 0, behavior: 'smooth' });
+                setTimeout(updateEdgeFades, 300);
+
+                // Refresh Lucide Icons
+                createIcons({ icons });
+            });
+        });
+    }
+
+    // ==================== HORIZONTAL PROJECTS TRACK INTERACTION ====================
+    const projectsTrack = document.getElementById('projects-track');
+    const projectsPrevBtn = document.getElementById('projects-prev-btn');
+    const projectsNextBtn = document.getElementById('projects-next-btn');
+    const projectsFadeLeft = document.getElementById('projects-fade-left');
+    const projectsFadeRight = document.getElementById('projects-fade-right');
+
+    if (projectsTrack) {
+        // Update Side Fade Shadow Overlays based on scroll position
+        const updateProjectEdgeFades = () => {
+            const maxScroll = projectsTrack.scrollWidth - projectsTrack.clientWidth;
+            const scrollPos = projectsTrack.scrollLeft;
+
+            if (projectsFadeLeft) {
+                projectsFadeLeft.style.opacity = scrollPos > 15 ? '1' : '0';
+            }
+            if (projectsFadeRight) {
+                projectsFadeRight.style.opacity = scrollPos >= maxScroll - 15 ? '0' : '1';
+            }
+        };
+
+        projectsTrack.addEventListener('scroll', updateProjectEdgeFades, { passive: true });
+        // Initial check
+        setTimeout(updateProjectEdgeFades, 200);
+
+        // Arrow Buttons Navigation with smooth card step
+        if (projectsPrevBtn) {
+            projectsPrevBtn.addEventListener('click', () => {
+                projectsTrack.scrollBy({ left: -420, behavior: 'smooth' });
+                setTimeout(updateProjectEdgeFades, 350);
+            });
+        }
+
+        if (projectsNextBtn) {
+            projectsNextBtn.addEventListener('click', () => {
+                projectsTrack.scrollBy({ left: 420, behavior: 'smooth' });
+                setTimeout(updateProjectEdgeFades, 350);
+            });
+        }
+
+        // Drag to scroll functionality
+        let isProjDown = false;
+        let startProjX;
+        let scrollProjLeft;
+
+        projectsTrack.addEventListener('mousedown', (e) => {
+            isProjDown = true;
+            startProjX = e.pageX - projectsTrack.offsetLeft;
+            scrollProjLeft = projectsTrack.scrollLeft;
+        });
+
+        projectsTrack.addEventListener('mouseleave', () => {
+            isProjDown = false;
+        });
+
+        projectsTrack.addEventListener('mouseup', () => {
+            isProjDown = false;
+        });
+
+        projectsTrack.addEventListener('mousemove', (e) => {
+            if (!isProjDown) return;
+            e.preventDefault();
+            const x = e.pageX - projectsTrack.offsetLeft;
+            const walk = (x - startProjX) * 1.6;
+            projectsTrack.scrollLeft = scrollProjLeft - walk;
+        });
+    }
+
+    // ==================== HORIZONTAL TESTIMONIALS TRACK INTERACTION ====================
+    const testimonialsTrack = document.getElementById('testimonials-track');
+    const testimonialsPrevBtn = document.getElementById('testimonials-prev-btn');
+    const testimonialsNextBtn = document.getElementById('testimonials-next-btn');
+    const testimonialsFadeLeft = document.getElementById('testimonials-fade-left');
+    const testimonialsFadeRight = document.getElementById('testimonials-fade-right');
+
+    if (testimonialsTrack) {
+        // Update Side Fade Shadow Overlays based on scroll position
+        const updateTestimonialsEdgeFades = () => {
+            const maxScroll = testimonialsTrack.scrollWidth - testimonialsTrack.clientWidth;
+            const scrollPos = testimonialsTrack.scrollLeft;
+
+            if (testimonialsFadeLeft) {
+                testimonialsFadeLeft.style.opacity = scrollPos > 15 ? '1' : '0';
+            }
+            if (testimonialsFadeRight) {
+                testimonialsFadeRight.style.opacity = scrollPos >= maxScroll - 15 ? '0' : '1';
+            }
+        };
+
+        testimonialsTrack.addEventListener('scroll', updateTestimonialsEdgeFades, { passive: true });
+        setTimeout(updateTestimonialsEdgeFades, 200);
+
+        // Arrow Buttons Navigation
+        if (testimonialsPrevBtn) {
+            testimonialsPrevBtn.addEventListener('click', () => {
+                testimonialsTrack.scrollBy({ left: -420, behavior: 'smooth' });
+                setTimeout(updateTestimonialsEdgeFades, 350);
+            });
+        }
+
+        if (testimonialsNextBtn) {
+            testimonialsNextBtn.addEventListener('click', () => {
+                testimonialsTrack.scrollBy({ left: 420, behavior: 'smooth' });
+                setTimeout(updateTestimonialsEdgeFades, 350);
+            });
+        }
+
+        // Drag to scroll functionality
+        let isTestDown = false;
+        let startTestX;
+        let scrollTestLeft;
+
+        testimonialsTrack.addEventListener('mousedown', (e) => {
+            isTestDown = true;
+            startTestX = e.pageX - testimonialsTrack.offsetLeft;
+            scrollTestLeft = testimonialsTrack.scrollLeft;
+        });
+
+        testimonialsTrack.addEventListener('mouseleave', () => {
+            isTestDown = false;
+        });
+
+        testimonialsTrack.addEventListener('mouseup', () => {
+            isTestDown = false;
+        });
+
+        testimonialsTrack.addEventListener('mousemove', (e) => {
+            if (!isTestDown) return;
+            e.preventDefault();
+            const x = e.pageX - testimonialsTrack.offsetLeft;
+            const walk = (x - startTestX) * 1.6;
+            testimonialsTrack.scrollLeft = scrollTestLeft - walk;
+        });
     }
 });

@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>AYSHAN | Creative Full Stack Architect</title>
+    <title>Ayshan Musfik | Founder @ CodeZorex | Full-Stack Developer</title>
+    <meta name="description" content="Ayshan Musfik - Founder of CodeZorex & Full-Stack Developer specializing in Laravel, Livewire, Tailwind CSS, MySQL, and modern business systems.">
+    <meta name="author" content="Ayshan Musfik">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,21 +37,115 @@
                 </span>
             </a>
 
-            <!-- Center Nav Links -->
+            <!-- Center Nav Links (Desktop) -->
             <div class="hidden md:flex items-center gap-2 text-sm font-semibold text-white">
                 <a href="#home" data-section="home" class="nav-link px-4 py-1.5 rounded-full bg-white/20 text-white shadow-sm transition-all duration-300">Home</a>
                 <a href="#about" data-section="about" class="nav-link px-4 py-1.5 rounded-full text-white/80 hover:text-white hover:bg-white/15 transition-all duration-300">About</a>
                 <a href="#process" data-section="process" class="nav-link px-4 py-1.5 rounded-full text-white/80 hover:text-white hover:bg-white/15 transition-all duration-300">Process</a>
                 <a href="#skills" data-section="skills" class="nav-link px-4 py-1.5 rounded-full text-white/80 hover:text-white hover:bg-white/15 transition-all duration-300">Tech Stack</a>
                 <a href="#projects" data-section="projects" class="nav-link px-4 py-1.5 rounded-full text-white/80 hover:text-white hover:bg-white/15 transition-all duration-300">Projects</a>
+                <a href="#testimonials" data-section="testimonials" class="nav-link px-4 py-1.5 rounded-full text-white/80 hover:text-white hover:bg-white/15 transition-all duration-300">Reviews</a>
                 <a href="#contact" data-section="contact" class="nav-link px-4 py-1.5 rounded-full text-white/80 hover:text-white hover:bg-white/15 transition-all duration-300">Contact</a>
             </div>
 
-            <!-- Right Hire Me Pill Button -->
-            <a href="#contact" class="magnetic-btn bg-white text-black hover:bg-neutral-100 font-bold px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm tracking-wide shadow-md hover:scale-105 transition-all duration-300 flex items-center justify-center">
-                <span class="text-black font-bold">Hire Me</span>
-            </a>
+            <!-- Right Actions Container (Desktop & Mobile) -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Right Hire Me Pill Button -->
+                <a href="#contact" class="magnetic-btn bg-white text-black hover:bg-neutral-100 font-bold px-4 py-1.5 sm:px-6 sm:py-2.5 rounded-full text-xs sm:text-sm tracking-wide shadow-md hover:scale-105 transition-all duration-300 flex items-center justify-center">
+                    <span class="text-black font-bold">Hire Me</span>
+                </a>
+
+                <!-- Mobile Hamburger Menu Button (Mobile Only) -->
+                <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden w-9 h-9 rounded-full bg-white/15 hover:bg-white/25 border border-white/20 flex items-center justify-center text-white transition-all duration-300 cursor-pointer">
+                    <span id="icon-menu-wrapper" class="flex items-center justify-center">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </span>
+                    <span id="icon-close-wrapper" class="hidden items-center justify-center">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </span>
+                </button>
+            </div>
         </nav>
+
+        <!-- Mobile Floating Glass Navigation Menu Sheet -->
+        <div id="mobile-menu-drawer" class="pointer-events-auto max-w-6xl mx-auto mt-3 rounded-3xl glass-liquid-nav p-5 hidden flex-col gap-2 md:hidden shadow-2xl border border-white/20 backdrop-blur-xl transition-all duration-300">
+            <div class="flex flex-col gap-1.5 font-semibold text-sm text-white">
+                <a href="#home" data-section="home" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-2xl bg-white/15 text-white transition-all">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-white/15 border border-white/20 flex items-center justify-center text-white">
+                            <i data-lucide="home" class="w-4 h-4 text-white"></i>
+                        </span>
+                        <span>Home</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
+                </a>
+                <a href="#about" data-section="about" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-2xl hover:bg-white/10 text-white/90 transition-all">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white">
+                            <i data-lucide="user" class="w-4 h-4 text-white"></i>
+                        </span>
+                        <span>About</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
+                </a>
+                <a href="#process" data-section="process" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-2xl hover:bg-white/10 text-white/90 transition-all">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white">
+                            <i data-lucide="workflow" class="w-4 h-4 text-white"></i>
+                        </span>
+                        <span>Process</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
+                </a>
+                <a href="#skills" data-section="skills" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-2xl hover:bg-white/10 text-white/90 transition-all">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white">
+                            <i data-lucide="code-2" class="w-4 h-4 text-white"></i>
+                        </span>
+                        <span>Tech Stack</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
+                </a>
+                <a href="#projects" data-section="projects" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-2xl hover:bg-white/10 text-white/90 transition-all">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white">
+                            <i data-lucide="layers" class="w-4 h-4 text-white"></i>
+                        </span>
+                        <span>Projects</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
+                </a>
+                <a href="#testimonials" data-section="testimonials" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-2xl hover:bg-white/10 text-white/90 transition-all">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                        </span>
+                        <span>Reviews</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
+                </a>
+                <a href="#contact" data-section="contact" class="mobile-nav-link flex items-center justify-between px-3.5 py-2.5 rounded-2xl hover:bg-white/10 text-white/90 transition-all">
+                    <span class="flex items-center gap-3">
+                        <span class="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white">
+                            <i data-lucide="send" class="w-4 h-4 text-white"></i>
+                        </span>
+                        <span>Contact</span>
+                    </span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 opacity-50"></i>
+                </a>
+            </div>
+
+            <div class="pt-3 mt-1 border-t border-white/10 flex items-center gap-3">
+                <a href="{{ asset('assets/docs/Ayshan_Musfik_Resume.pdf') }}" download class="flex-1 py-2.5 rounded-xl bg-white/10 border border-white/15 text-center text-xs font-bold text-white hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                    <span>Download CV</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link flex-1 py-2.5 rounded-xl bg-red-600 hover:bg-red-700 text-center text-xs font-bold text-white transition-all flex items-center justify-center gap-2 shadow-lg shadow-red-600/30">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    <span>Let's Talk</span>
+                </a>
+            </div>
+        </div>
     </header>
 
     <!-- ==================== 3. RESPONSIVE FULL-BLEED HERO CANVAS ==================== -->
@@ -70,11 +166,11 @@
                 </h2>
 
                 <p class="hero-text-elem text-white/90 text-xs sm:text-sm md:text-xl max-w-[280px] sm:max-w-md md:max-w-lg font-medium leading-relaxed mb-4 md:mb-8">
-                    I build fast, scalable and modern web applications using Laravel, React, Node.js and Tailwind CSS.
+                    Founder of <span class="font-bold underline decoration-white/40">CodeZorex</span> & Full-Stack Developer building modern web apps, scalable business systems, and clean UI/UX with Laravel, Livewire & Tailwind CSS.
                 </p>
 
                 <!-- Action Buttons -->
-                <div class="flex flex-row items-center gap-2.5 sm:gap-4">
+                <div class="flex flex-row items-center gap-2.5 sm:gap-4 flex-wrap">
                     <!-- CTA 1: View My Work -->
                     <a href="#projects" class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2 md:px-9 md:py-4 rounded-full bg-white text-black hover:bg-gray-100 font-bold text-xs md:text-base tracking-wide shadow-xl hover:scale-105 transition-all duration-300">
                         <span>View My Work</span>
@@ -83,6 +179,11 @@
                     <!-- CTA 2: Contact Me -->
                     <a href="#contact" class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2 md:px-9 md:py-4 rounded-full bg-black/50 border border-white/30 hover:bg-black/70 text-white font-bold text-xs md:text-base tracking-wide transition-all duration-300">
                         <span>Contact Me</span>
+                    </a>
+
+                    <!-- CTA 3: Download CV -->
+                    <a href="{{ asset('assets/docs/Ayshan_CV.pdf') }}" download class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2 md:px-6 md:py-4 rounded-full bg-white/15 border border-white/40 hover:bg-white/25 text-white font-bold text-xs md:text-base tracking-wide transition-all duration-300">
+                        <span>Download CV</span>
                     </a>
                 </div>
 
@@ -153,13 +254,33 @@
                     Hello!
                 </h2>
 
-                <p class="text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug mb-8 max-w-2xl">
-                    I'm <strong class="font-black text-white underline decoration-white/30 underline-offset-8">Ayshan Musfik</strong>, a passionate full-stack developer dedicated to crafting clean, functional, and highly scalable web applications.
+                <p class="text-white text-xl sm:text-2xl md:text-3xl font-semibold leading-snug mb-6 max-w-2xl">
+                    I'm <strong class="font-black text-white underline decoration-white/30 underline-offset-8">Ayshan Musfik</strong>, Founder of CodeZorex and a Full-Stack Developer from Sri Lanka dedicated to crafting clean, functional, and highly scalable web systems.
                 </p>
 
-                <p class="text-white/90 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl">
-                    I bridge the gap between creative visual UI design and bulletproof backend architectures. Specializing in Laravel 12, React, Tailwind CSS, and GSAP motion graphics to build exceptional digital experiences.
+                <p class="text-white/90 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl mb-8">
+                    I bridge the gap between creative visual UI/UX design and bulletproof backend engineering. Specializing in Laravel, Livewire, PHP, MySQL, JavaScript, and Tailwind CSS to transform complex ideas into reliable digital products.
                 </p>
+
+                <!-- Key Highlights / Stat Badges -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-2xl pt-4 border-t border-white/20">
+                    <div class="flex flex-col">
+                        <span class="text-2xl sm:text-3xl font-black text-white font-mono">12+</span>
+                        <span class="text-xs text-white/80 uppercase font-mono">Projects Built</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl sm:text-3xl font-black text-white font-mono">5+</span>
+                        <span class="text-xs text-white/80 uppercase font-mono">Business Systems</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl sm:text-3xl font-black text-white font-mono">1</span>
+                        <span class="text-xs text-white/80 uppercase font-mono">Startup Founded</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-2xl sm:text-3xl font-black text-white font-mono">2026</span>
+                        <span class="text-xs text-white/80 uppercase font-mono">Active Full-Stack</span>
+                    </div>
+                </div>
 
             </div>
 
@@ -167,37 +288,37 @@
     </section>
 
     <!-- ==================== 5. HOW WE WORK / PROCESS (CARD STACKING SECTION) ==================== -->
-    <section id="process" class="relative bg-[#0B0B0C] text-white min-h-screen py-20 lg:py-0 px-6 md:px-12 lg:px-20 flex items-center overflow-hidden">
+    <section id="process" class="relative bg-[#0B0B0C] text-white min-h-screen py-14 sm:py-20 lg:py-0 px-4 sm:px-6 md:px-12 lg:px-20 flex items-center overflow-hidden">
         
         <!-- Ambient Red Glows -->
         <div class="absolute top-1/3 right-10 w-[500px] h-[500px] bg-[#E50914]/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-        <div class="max-w-[1700px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="max-w-[1700px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-16 items-center">
             
             <!-- LEFT COLUMN: Sticky Content -->
-            <div class="left-sticky-col lg:col-span-5 flex flex-col items-start pt-4">
+            <div class="left-sticky-col lg:col-span-5 flex flex-col items-start pt-1 lg:pt-4">
                 
                 <!-- Pill Tag -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-2.5 sm:mb-4 lg:mb-6">
                     <span class="w-2 h-2 rounded-full bg-[#E50914]"></span>
-                    <span class="text-xs font-mono tracking-widest text-white uppercase font-bold">
+                    <span class="text-[10px] sm:text-xs font-mono tracking-widest text-white uppercase font-bold">
                         How We Work
                     </span>
                 </div>
 
                 <!-- Main Bold Headline -->
-                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
+                <h2 class="text-2xl sm:text-4xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15] mb-2 sm:mb-3 lg:mb-6">
                     Let us show you how we drive your brand to <span class="text-[#E50914]">new heights</span>
                 </h2>
 
                 <!-- Description Paragraph -->
-                <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-md font-normal mb-8">
+                <p class="text-gray-400 text-xs sm:text-base md:text-lg leading-relaxed max-w-md font-normal mb-3 sm:mb-4 lg:mb-8 line-clamp-2 sm:line-clamp-none">
                     We follow a structured, creative, and highly technical approach to turn your ideas into robust full stack applications.
                 </p>
 
                 <!-- Small Stack Counter Badge -->
-                <div class="hidden lg:flex items-center gap-3 text-xs font-mono text-gray-500">
-                    <span class="text-[#E50914] font-bold text-sm">04 STEPS</span>
+                <div class="flex items-center gap-3 text-[11px] sm:text-xs font-mono text-gray-500 mb-1 lg:mb-0">
+                    <span class="text-[#E50914] font-bold text-xs sm:text-sm">04 STEPS</span>
                     <span>/</span>
                     <span>SCROLL TO UNLOCK</span>
                 </div>
@@ -205,61 +326,217 @@
             </div>
 
             <!-- RIGHT COLUMN: 4 Stackable Red Process Cards -->
-            <div class="right-stack-col lg:col-span-7 relative w-full min-h-[460px] sm:min-h-[520px] lg:min-h-[560px] flex flex-col lg:block gap-6">
+            <div class="right-stack-col lg:col-span-7 relative w-full h-[450px] sm:h-[490px] md:h-[530px] lg:h-[560px]">
                 
                 <!-- CARD 01 -->
-                <div class="process-card lg:absolute lg:inset-0 w-full h-full bg-[#E50914] text-white rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl border border-white/10 flex flex-col justify-between z-10">
-                    <div class="flex items-center justify-between mb-6 border-b border-white/20 pb-4">
-                        <span class="font-mono text-3xl md:text-4xl font-extrabold opacity-75">01</span>
-                        <span class="px-4 py-1 rounded-full bg-black/20 text-xs font-mono font-bold tracking-widest uppercase">Phase One</span>
-                    </div>
+                <div class="process-card absolute inset-0 w-full h-full bg-[#E50914] text-white rounded-3xl p-5 sm:p-7 md:p-10 shadow-2xl border border-white/15 flex flex-col justify-between z-10">
+                    <!-- Top Header -->
                     <div>
-                        <h3 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Define</h3>
-                        <p class="text-white/90 text-base md:text-lg leading-relaxed font-normal">
-                            We start by understanding your goals, user requirements, and technical constraints to lay a rock-solid foundation for the project.
-                        </p>
+                        <div class="flex items-center justify-between mb-3 sm:mb-4 border-b border-white/20 pb-2.5 sm:pb-3">
+                            <span class="font-mono text-2xl sm:text-3xl md:text-4xl font-extrabold opacity-75">01</span>
+                            <span class="px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full bg-black/25 text-[10px] sm:text-xs font-mono font-bold tracking-widest uppercase border border-white/10">Phase One</span>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl sm:text-3xl md:text-4xl font-black tracking-tight mb-1.5 sm:mb-2">Define & Plan</h3>
+                            <p class="text-white/90 text-xs sm:text-base leading-relaxed font-normal">
+                                Understanding project goals, business workflows, database structures, and technical requirements to lay a rock-solid foundation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Center Deliverables Grid -->
+                    <div class="my-2 sm:my-4">
+                        <div class="text-[10px] sm:text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase mb-2 sm:mb-3 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                            <span>KEY DELIVERABLES & FOCUS</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 sm:gap-2.5">
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Requirements Spec</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">DB Architecture</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Workflow Mapping</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Delivery Roadmap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Phase Footer -->
+                    <div class="pt-2.5 sm:pt-3 border-t border-white/15 flex items-center justify-between text-[10px] sm:text-xs font-mono text-white/80">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="compass" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+                            <span>Architecture & Discovery</span>
+                        </span>
+                        <span class="font-bold text-white bg-black/20 px-2 py-0.5 sm:px-2.5 rounded-full">Step 1 of 4</span>
                     </div>
                 </div>
 
                 <!-- CARD 02 -->
-                <div class="process-card lg:absolute lg:inset-0 w-full h-full bg-[#E50914] text-white rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl border border-white/10 flex flex-col justify-between z-20">
-                    <div class="flex items-center justify-between mb-6 border-b border-white/20 pb-4">
-                        <span class="font-mono text-3xl md:text-4xl font-extrabold opacity-75">02</span>
-                        <span class="px-4 py-1 rounded-full bg-black/20 text-xs font-mono font-bold tracking-widest uppercase">Phase Two</span>
-                    </div>
+                <div class="process-card absolute inset-0 w-full h-full bg-[#E50914] text-white rounded-3xl p-5 sm:p-7 md:p-10 shadow-2xl border border-white/15 flex flex-col justify-between z-20">
+                    <!-- Top Header -->
                     <div>
-                        <h3 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Design</h3>
-                        <p class="text-white/90 text-base md:text-lg leading-relaxed font-normal">
-                            Crafting clean, pixel-perfect user interfaces and wireframes that guarantee an engaging user experience and high conversion rates.
-                        </p>
+                        <div class="flex items-center justify-between mb-3 sm:mb-4 border-b border-white/20 pb-2.5 sm:pb-3">
+                            <span class="font-mono text-2xl sm:text-3xl md:text-4xl font-extrabold opacity-75">02</span>
+                            <span class="px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full bg-black/25 text-[10px] sm:text-xs font-mono font-bold tracking-widest uppercase border border-white/10">Phase Two</span>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl sm:text-3xl md:text-4xl font-black tracking-tight mb-1.5 sm:mb-2">Design & Prototype</h3>
+                            <p class="text-white/90 text-xs sm:text-base leading-relaxed font-normal">
+                                Crafting clean, pixel-perfect user interfaces and wireframes in Figma optimized for clarity, brand identity, and high usability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Center Deliverables Grid -->
+                    <div class="my-2 sm:my-4">
+                        <div class="text-[10px] sm:text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase mb-2 sm:mb-3 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                            <span>KEY DELIVERABLES & FOCUS</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 sm:gap-2.5">
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Figma UI Design</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Mobile Responsive</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Click Prototypes</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Token Styleguide</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Phase Footer -->
+                    <div class="pt-2.5 sm:pt-3 border-t border-white/15 flex items-center justify-between text-[10px] sm:text-xs font-mono text-white/80">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="palette" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+                            <span>UI/UX & Prototyping</span>
+                        </span>
+                        <span class="font-bold text-white bg-black/20 px-2 py-0.5 sm:px-2.5 rounded-full">Step 2 of 4</span>
                     </div>
                 </div>
 
                 <!-- CARD 03 -->
-                <div class="process-card lg:absolute lg:inset-0 w-full h-full bg-[#E50914] text-white rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl border border-white/10 flex flex-col justify-between z-30">
-                    <div class="flex items-center justify-between mb-6 border-b border-white/20 pb-4">
-                        <span class="font-mono text-3xl md:text-4xl font-extrabold opacity-75">03</span>
-                        <span class="px-4 py-1 rounded-full bg-black/20 text-xs font-mono font-bold tracking-widest uppercase">Phase Three</span>
-                    </div>
+                <div class="process-card absolute inset-0 w-full h-full bg-[#E50914] text-white rounded-3xl p-5 sm:p-7 md:p-10 shadow-2xl border border-white/15 flex flex-col justify-between z-30">
+                    <!-- Top Header -->
                     <div>
-                        <h3 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Build</h3>
-                        <p class="text-white/90 text-base md:text-lg leading-relaxed font-normal">
-                            Developing scalable frontend architectures and secure backend systems using Laravel 12, Tailwind CSS, GSAP, and modern APIs.
-                        </p>
+                        <div class="flex items-center justify-between mb-3 sm:mb-4 border-b border-white/20 pb-2.5 sm:pb-3">
+                            <span class="font-mono text-2xl sm:text-3xl md:text-4xl font-extrabold opacity-75">03</span>
+                            <span class="px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full bg-black/25 text-[10px] sm:text-xs font-mono font-bold tracking-widest uppercase border border-white/10">Phase Three</span>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl sm:text-3xl md:text-4xl font-black tracking-tight mb-1.5 sm:mb-2">Full-Stack Build</h3>
+                            <p class="text-white/90 text-xs sm:text-base leading-relaxed font-normal">
+                                Developing robust backend architectures and reactive full-stack interfaces using Laravel, Livewire, MySQL, and Tailwind CSS.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Center Deliverables Grid -->
+                    <div class="my-2 sm:my-4">
+                        <div class="text-[10px] sm:text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase mb-2 sm:mb-3 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                            <span>KEY DELIVERABLES & FOCUS</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 sm:gap-2.5">
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Laravel 12 APIs</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Livewire Reactive</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">MySQL Query Tuning</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Auth & Security</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Phase Footer -->
+                    <div class="pt-2.5 sm:pt-3 border-t border-white/15 flex items-center justify-between text-[10px] sm:text-xs font-mono text-white/80">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="code-2" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+                            <span>Engineering & Integration</span>
+                        </span>
+                        <span class="font-bold text-white bg-black/20 px-2 py-0.5 sm:px-2.5 rounded-full">Step 3 of 4</span>
                     </div>
                 </div>
 
                 <!-- CARD 04 -->
-                <div class="process-card lg:absolute lg:inset-0 w-full h-full bg-[#E50914] text-white rounded-3xl p-8 sm:p-10 md:p-12 shadow-2xl border border-white/10 flex flex-col justify-between z-40">
-                    <div class="flex items-center justify-between mb-6 border-b border-white/20 pb-4">
-                        <span class="font-mono text-3xl md:text-4xl font-extrabold opacity-75">04</span>
-                        <span class="px-4 py-1 rounded-full bg-black/20 text-xs font-mono font-bold tracking-widest uppercase">Phase Four</span>
-                    </div>
+                <div class="process-card absolute inset-0 w-full h-full bg-[#E50914] text-white rounded-3xl p-5 sm:p-7 md:p-10 shadow-2xl border border-white/15 flex flex-col justify-between z-40">
+                    <!-- Top Header -->
                     <div>
-                        <h3 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Launch</h3>
-                        <p class="text-white/90 text-base md:text-lg leading-relaxed font-normal">
-                            Rigorous testing, optimization, and seamless deployment to cloud infrastructure, followed by ongoing support and feature updates.
-                        </p>
+                        <div class="flex items-center justify-between mb-3 sm:mb-4 border-b border-white/20 pb-2.5 sm:pb-3">
+                            <span class="font-mono text-2xl sm:text-3xl md:text-4xl font-extrabold opacity-75">04</span>
+                            <span class="px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full bg-black/25 text-[10px] sm:text-xs font-mono font-bold tracking-widest uppercase border border-white/10">Phase Four</span>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl sm:text-3xl md:text-4xl font-black tracking-tight mb-1.5 sm:mb-2">Test & Launch</h3>
+                            <p class="text-white/90 text-xs sm:text-base leading-relaxed font-normal">
+                                Rigorous testing, speed optimization, and seamless cloud deployment, backed by continuous improvements and ongoing support.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Center Deliverables Grid -->
+                    <div class="my-2 sm:my-4">
+                        <div class="text-[10px] sm:text-[11px] font-mono font-bold tracking-widest text-white/80 uppercase mb-2 sm:mb-3 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span>
+                            <span>KEY DELIVERABLES & FOCUS</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 sm:gap-2.5">
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Cross-Device QA</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Speed & SEO</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Cloud Deployment</span>
+                            </div>
+                            <div class="flex items-center gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-xl bg-black/20 backdrop-blur-sm border border-white/10 text-[11px] sm:text-sm font-medium text-white/95">
+                                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white shrink-0"></i>
+                                <span class="truncate">Support & Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Phase Footer -->
+                    <div class="pt-2.5 sm:pt-3 border-t border-white/15 flex items-center justify-between text-[10px] sm:text-xs font-mono text-white/80">
+                        <span class="flex items-center gap-1.5">
+                            <i data-lucide="rocket" class="w-3 h-3 sm:w-3.5 sm:h-3.5"></i>
+                            <span>Production & Delivery</span>
+                        </span>
+                        <span class="font-bold text-white bg-black/20 px-2 py-0.5 sm:px-2.5 rounded-full">Step 4 of 4</span>
                     </div>
                 </div>
 
@@ -268,243 +545,913 @@
         </div>
     </section>
 
-    <!-- ==================== 6. INTERACTIVE TECH STACK SECTION ==================== -->
-    <section id="skills" class="relative bg-[#111111] text-white py-24 sm:py-32 px-6 md:px-12 lg:px-20 border-t border-white/5 overflow-hidden">
+    <!-- ==================== 6. INTERACTIVE TECH STACK SECTION (HORIZONTAL SCROLL DECK) ==================== -->
+    <section id="skills" class="relative bg-[#111111] text-white py-24 sm:py-32 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-white/5 overflow-hidden">
         
-        <div class="max-w-[1700px] mx-auto w-full flex flex-col items-center text-center">
+        <!-- Ambient Red Glow Orb -->
+        <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#E50914]/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-[1700px] mx-auto w-full flex flex-col">
             
-            <!-- Section Pill Header -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-6">
-                <span class="w-2 h-2 rounded-full bg-[#E50914]"></span>
-                <span class="text-xs font-mono tracking-widest text-white uppercase font-bold">
-                    Technical Expertise
-                </span>
+            <!-- Section Header & Navigation Row -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
+                <div class="flex flex-col items-start text-left">
+                    <!-- Section Pill Header -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-4">
+                        <span class="w-2 h-2 rounded-full bg-[#E50914] animate-pulse"></span>
+                        <span class="text-xs font-mono tracking-widest text-white uppercase font-bold">
+                            ✦ TECHNICAL ARSENAL
+                        </span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                        Complete Software <span class="text-[#E50914]">Toolkit & Skills</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed mt-2">
+                        Scroll through all 18+ languages, frameworks, database systems, and development tools I use to build scalable products.
+                    </p>
+                </div>
+
+                <!-- Horizontal Navigation Scroll Arrows -->
+                <div class="flex items-center gap-3 self-start md:self-end">
+                    <button id="skills-prev-btn" aria-label="Scroll skills left" class="magnetic-btn w-12 h-12 rounded-full bg-white/10 border border-white/20 hover:bg-[#E50914] hover:border-[#E50914] flex items-center justify-center text-white transition-all duration-300 cursor-pointer group shadow-lg">
+                        <i data-lucide="chevron-left" class="w-6 h-6 group-hover:-translate-x-0.5 transition-transform"></i>
+                    </button>
+                    <button id="skills-next-btn" aria-label="Scroll skills right" class="magnetic-btn w-12 h-12 rounded-full bg-white/10 border border-white/20 hover:bg-[#E50914] hover:border-[#E50914] flex items-center justify-center text-white transition-all duration-300 cursor-pointer group shadow-lg">
+                        <i data-lucide="chevron-right" class="w-6 h-6 group-hover:translate-x-0.5 transition-transform"></i>
+                    </button>
+                </div>
             </div>
 
-            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-4">
-                Powering Modern <span class="text-[#E50914]">Digital Experiences</span>
-            </h2>
-            <p class="text-gray-400 text-base md:text-lg max-w-2xl leading-relaxed mb-16">
-                Hover over the technologies below to experience interactive 3D parallax tilt effects.
-            </p>
+            <!-- Category Filter Pills -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none">
+                <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-[#E50914] text-white border border-[#E50914]" data-category="all">All (18)</button>
+                <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10" data-category="backend">Backend & Core</button>
+                <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10" data-category="frontend">Frontend & UI</button>
+                <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10" data-category="database">Database</button>
+                <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10" data-category="tools">Tools & DevOps</button>
+                <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10" data-category="design">Design & Learning</button>
+            </div>
 
-            <!-- Tech Cards Grid -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 w-full">
-                
-                <!-- Tech 1: Laravel -->
-                <div class="tech-card bg-white/5 border border-white/10 hover:border-[#E50914]/50 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-[#E50914]/20 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300">
-                        <i data-lucide="layers" class="w-7 h-7 text-[#E50914] group-hover:text-white"></i>
+            <!-- Scrollable Track Container with Side Gradient Shadows -->
+            <div class="relative w-full">
+                <!-- Left Gradient Shadow Blend Overlay -->
+                <div id="skills-fade-left" class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent z-20 opacity-0 transition-opacity duration-300"></div>
+
+                <!-- Right Gradient Shadow Blend Overlay -->
+                <div id="skills-fade-right" class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#111111] via-[#111111]/90 to-transparent z-20 transition-opacity duration-300 flex items-center justify-end pr-2 sm:pr-4">
+                    <div class="w-8 h-8 rounded-full bg-[#E50914]/20 border border-[#E50914]/40 flex items-center justify-center text-white/80 animate-pulse hidden sm:flex shadow-lg">
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-white"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-1">Laravel 12</h3>
-                    <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Backend Architecture</span>
                 </div>
 
-                <!-- Tech 2: React / Vue -->
-                <div class="tech-card bg-white/5 border border-white/10 hover:border-[#E50914]/50 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-[#E50914]/20 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300">
-                        <i data-lucide="code-2" class="w-7 h-7 text-[#E50914] group-hover:text-white"></i>
+                <!-- Horizontal Scrollable Card Deck -->
+                <div id="skills-track" class="flex gap-6 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth cursor-grab active:cursor-grabbing px-1">
+                    
+                    <!-- 1. Laravel -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="backend">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="layers" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Core Stack</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Laravel 12</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Backend Framework</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">MVC architecture, Eloquent ORM, REST APIs, queues, and scalable business logic.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-1">React & Vue</h3>
-                    <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Frontend Frameworks</span>
-                </div>
 
-                <!-- Tech 3: Node.js -->
-                <div class="tech-card bg-white/5 border border-white/10 hover:border-[#E50914]/50 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-[#E50914]/20 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300">
-                        <i data-lucide="server" class="w-7 h-7 text-[#E50914] group-hover:text-white"></i>
+                    <!-- 2. Livewire -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="backend">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="zap" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Full-Stack</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Livewire 3</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Full-Stack Reactive UI</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Real-time reactive frontend components without leaving standard PHP & Blade.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-1">Node.js</h3>
-                    <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Runtime Environment</span>
-                </div>
 
-                <!-- Tech 4: Tailwind CSS -->
-                <div class="tech-card bg-white/5 border border-white/10 hover:border-[#E50914]/50 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-[#E50914]/20 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300">
-                        <i data-lucide="palette" class="w-7 h-7 text-[#E50914] group-hover:text-white"></i>
+                    <!-- 3. PHP -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="backend">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="code-2" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Language</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">PHP 8.x</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Server Programming</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Object-oriented programming, modern attributes, strong types, and robust architectures.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-1">Tailwind CSS</h3>
-                    <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Design Systems</span>
-                </div>
 
-                <!-- Tech 5: GSAP -->
-                <div class="tech-card bg-white/5 border border-white/10 hover:border-[#E50914]/50 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-[#E50914]/20 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300">
-                        <i data-lucide="sparkles" class="w-7 h-7 text-[#E50914] group-hover:text-white"></i>
+                    <!-- 4. Tailwind CSS -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="frontend">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="palette" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Styling</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Tailwind CSS</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Design Systems</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Rapid responsive styling, dark modes, animations, custom theme tokens, and glassmorphism.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Expert</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-1">GSAP 3</h3>
-                    <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Motion & Animations</span>
-                </div>
 
-                <!-- Tech 6: MySQL -->
-                <div class="tech-card bg-white/5 border border-white/10 hover:border-[#E50914]/50 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-[#E50914]/20 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300">
-                        <i data-lucide="database" class="w-7 h-7 text-[#E50914] group-hover:text-white"></i>
+                    <!-- 5. JavaScript -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="frontend">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="terminal" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Frontend</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">JavaScript</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">ES6+ & Interactivity</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Async/await, AJAX fetch, DOM animations, event listeners, and interactive UI logic.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Proficient</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-1">MySQL</h3>
-                    <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Relational Database</span>
-                </div>
 
-                <!-- Tech 7: Docker -->
-                <div class="tech-card bg-white/5 border border-white/10 hover:border-[#E50914]/50 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-[#E50914]/20 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300">
-                        <i data-lucide="container" class="w-7 h-7 text-[#E50914] group-hover:text-white"></i>
+                    <!-- 6. MySQL -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="database">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="database" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Database</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">MySQL</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Relational Database</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Normalized schema design, foreign keys, query optimization, indexing, and migrations.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-1">Docker</h3>
-                    <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">Containerization</span>
-                </div>
 
-                <!-- Tech 8: REST APIs -->
-                <div class="tech-card bg-white/5 border border-white/10 hover:border-[#E50914]/50 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-xl hover:shadow-[#E50914]/20 group cursor-pointer">
-                    <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300">
-                        <i data-lucide="cpu" class="w-7 h-7 text-[#E50914] group-hover:text-white"></i>
+                    <!-- 7. SQL Queries -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="database">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="hard-drive" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Query Engine</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">SQL Queries</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Data Operations</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Complex joins, aggregates, transactions, reporting queries, and data integrity.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Proficient</span>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-1">REST & APIs</h3>
-                    <span class="text-xs font-mono text-gray-400 uppercase tracking-wider">System Integration</span>
-                </div>
 
+                    <!-- 8. HTML5 -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="frontend">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="layout-template" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Markup</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">HTML5</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Semantic Structure</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Accessible, SEO-compliant semantic structure, meta schemas, and responsive layouts.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Expert</span>
+                        </div>
+                    </div>
+
+                    <!-- 9. CSS3 -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="frontend">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="sparkles" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Styling</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">CSS3</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Animations & Layouts</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Flexbox, CSS Grid, keyframe animations, media queries, and modern fluid typography.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Expert</span>
+                        </div>
+                    </div>
+
+                    <!-- 10. GitHub -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="tools">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="git-pull-request" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">DevOps</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">GitHub</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Version Control & CI/CD</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Repository management, GitHub Actions, pull requests, automated builds, and collaboration.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
+                        </div>
+                    </div>
+
+                    <!-- 11. Git CLI -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="tools">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="git-branch" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">VCS</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Git CLI</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Branching & Tracking</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Branching workflows, rebasing, commit strategies, and team code management.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
+                        </div>
+                    </div>
+
+                    <!-- 12. VS Code -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="tools">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="laptop" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">IDE</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">VS Code</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Development Environment</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Tailored developer tooling, PHP Intelephense, Laravel extensions, and debugger.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Expert</span>
+                        </div>
+                    </div>
+
+                    <!-- 13. Figma -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="design">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="layout" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Design</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Figma</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">UI/UX & Prototyping</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Component libraries, auto-layout, interactive prototypes, and design handoffs.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
+                        </div>
+                    </div>
+
+                    <!-- 14. REST APIs -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="backend">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="cpu" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Integration</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">RESTful APIs</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Endpoint Architecture</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">JSON APIs, rate limiting, token authentication (Sanctum), and third-party integrations.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
+                        </div>
+                    </div>
+
+                    <!-- 15. React -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="design">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="component" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Learning</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">React.js</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Frontend Library</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Component architecture, JSX, hooks, state management, and modern SPA principles.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-red-400 font-bold">Learning</span>
+                        </div>
+                    </div>
+
+                    <!-- 16. TypeScript -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="design">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="file-code" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Learning</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">TypeScript</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Typed JavaScript</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Static typing, interface contracts, generics, and enterprise front-end stability.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-red-400 font-bold">Learning</span>
+                        </div>
+                    </div>
+
+                    <!-- 17. Docker -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="tools">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="box" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Containers</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Docker</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Containerization</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Docker Compose, reproducible dev environments, and consistent production deployment.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Proficient</span>
+                        </div>
+                    </div>
+
+                    <!-- 18. Postman -->
+                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="tools">
+                        <div>
+                            <div class="flex items-center justify-between mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
+                                    <i data-lucide="send" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Testing</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Postman</h3>
+                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">API Testing & Telemetry</p>
+                            <p class="text-xs text-gray-400 leading-relaxed">Automated request collections, auth tokens, schema verification, and endpoint load testing.</p>
+                        </div>
+                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
+                            <span>Proficiency</span>
+                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- ==================== 7. INTERACTIVE 3D GLASS SHOWCASE & PARALLAX DECK (PROJECTS) ==================== -->
-    <section id="projects" class="relative bg-[#0A0A0A] text-white py-28 px-6 lg:px-20 border-t border-white/5 overflow-hidden">
+    <!-- ==================== 7. INTERACTIVE 3D GLASS SHOWCASE & HORIZONTAL DECK (PROJECTS) ==================== -->
+    <section id="projects" class="relative bg-[#0A0A0A] text-white py-28 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-white/5 overflow-hidden">
         
         <!-- Ambient Red Backdrop Glow Orb -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-        <div class="max-w-[1700px] mx-auto w-full relative z-10 flex flex-col items-center">
+        <div class="max-w-[1700px] mx-auto w-full relative z-10 flex flex-col">
             
-            <!-- Section Pill Header -->
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-4">
-                <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-                <span class="text-xs font-mono tracking-widest text-white uppercase font-bold">
-                    ✦ FEATURED PRODUCTIONS
-                </span>
+            <!-- Section Header & Navigation Row -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+                <div class="flex flex-col items-start text-left">
+                    <!-- Section Pill Header -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-4">
+                        <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+                        <span class="text-xs font-mono tracking-widest text-white uppercase font-bold">
+                            ✦ FEATURED WORK & CLIENT BUILDS
+                        </span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                        Featured <span class="text-red-600">Projects</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed mt-2">
+                        Explore real-world business systems, client platforms, and active web applications built with Laravel, Livewire, and modern architectures.
+                    </p>
+                </div>
+
+                <!-- Horizontal Navigation Scroll Arrows -->
+                <div class="flex items-center gap-3 self-start md:self-end">
+                    <button id="projects-prev-btn" aria-label="Scroll projects left" class="magnetic-btn w-12 h-12 rounded-full bg-white/10 border border-white/20 hover:bg-[#E50914] hover:border-[#E50914] flex items-center justify-center text-white transition-all duration-300 cursor-pointer group shadow-lg">
+                        <i data-lucide="chevron-left" class="w-6 h-6 group-hover:-translate-x-0.5 transition-transform"></i>
+                    </button>
+                    <button id="projects-next-btn" aria-label="Scroll projects right" class="magnetic-btn w-12 h-12 rounded-full bg-white/10 border border-white/20 hover:bg-[#E50914] hover:border-[#E50914] flex items-center justify-center text-white transition-all duration-300 cursor-pointer group shadow-lg">
+                        <i data-lucide="chevron-right" class="w-6 h-6 group-hover:translate-x-0.5 transition-transform"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- Big Bold Title -->
-            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight text-center max-w-4xl leading-tight mb-4">
-                Crafting Digital <span class="text-red-600">Masterpieces</span>
-            </h2>
+            <!-- Scrollable Track Container with Side Gradient Shadows -->
+            <div class="relative w-full">
+                <!-- Left Gradient Shadow Blend Overlay -->
+                <div id="projects-fade-left" class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent z-20 opacity-0 transition-opacity duration-300"></div>
 
-            <!-- Subtitle -->
-            <p class="text-gray-400 text-base md:text-lg max-w-2xl text-center leading-relaxed font-normal mb-16">
-                Engineered for speed, built for scale. Explore selected full-stack web applications and interactive motion platforms.
-            </p>
-
-            <!-- 3-Column Asymmetric Showcase Deck Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 w-full relative z-10 items-stretch">
-                
-                <!-- CARD 01 (Core Product) -->
-                <div class="project-showcase-card bg-[#141414] border border-white/10 hover:border-red-600/60 rounded-3xl p-8 relative group transition-all duration-500 shadow-2xl flex flex-col justify-between cursor-pointer">
-                    <div>
-                        <!-- Top Index Tag -->
-                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
-                            <span class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">01 / ERP & POS PLATFORM</span>
-                            <span class="w-3 h-3 rounded-full bg-red-600/30 border border-red-500 group-hover:scale-125 transition-transform"></span>
-                        </div>
-
-                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 group-hover:text-red-500 transition-colors">
-                            E-Commerce & POS Automation Platform
-                        </h3>
-
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6 font-normal">
-                            High-throughput inventory telemetry, multi-tenant synchronization, real-time analytics, and automated invoicing system built for scale.
-                        </p>
-                    </div>
-
-                    <div>
-                        <!-- Tech Chips -->
-                        <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-mono text-gray-300 font-semibold border border-white/10">Laravel 12</span>
-                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-mono text-gray-300 font-semibold border border-white/10">Tailwind CSS</span>
-                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-mono text-gray-300 font-semibold border border-white/10">MySQL</span>
-                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-mono text-gray-300 font-semibold border border-white/10">REST API</span>
-                        </div>
-
-                        <!-- CTA Action Button -->
-                        <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-red-500 transition-colors">
-                            <span>Explore Project</span>
-                            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
-                        </a>
+                <!-- Right Gradient Shadow Blend Overlay -->
+                <div id="projects-fade-right" class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#0A0A0A] via-[#0A0A0A]/90 to-transparent z-20 transition-opacity duration-300 flex items-center justify-end pr-2 sm:pr-4">
+                    <div class="w-8 h-8 rounded-full bg-red-600/20 border border-red-600/40 flex items-center justify-center text-white/80 animate-pulse hidden sm:flex shadow-lg">
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-white"></i>
                     </div>
                 </div>
 
-                <!-- CARD 02 (Featured SaaS - Elevated Accent Card) -->
-                <div class="project-showcase-card lg:-translate-y-6 bg-gradient-to-b from-neutral-900 to-[#121212] border-2 border-red-600 rounded-3xl p-8 relative group transition-all duration-500 shadow-2xl shadow-red-600/20 flex flex-col justify-between cursor-pointer">
-                    <div>
-                        <!-- Top Index Tag -->
-                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/30">
-                            <span class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">02 / MOTION DASHBOARD (FEATURED)</span>
-                            <span class="relative flex h-3 w-3">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
-                            </span>
+                <!-- Horizontal Scrollable Project Deck Track -->
+                <div id="projects-track" class="flex gap-6 overflow-x-auto pb-10 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth cursor-grab active:cursor-grabbing px-1 items-stretch">
+                    
+                    <!-- CARD 01: JR Marketing POS System -->
+                    <div class="project-showcase-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-[#141414] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                        <div>
+                            <!-- Top Index Tag -->
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
+                                <span class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">01 / BUSINESS MANAGEMENT & POS</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    Deployed & Active
+                                </span>
+                            </div>
+
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 group-hover:text-red-500 transition-colors">
+                                JR Marketing POS System
+                            </h3>
+
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6 font-normal">
+                                Fully developed, deployed to cloud, and actively used by the client for daily business operations, inventory tracking, sales transactions, automated POS invoicing, and revenue reporting.
+                            </p>
                         </div>
 
-                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 group-hover:text-red-500 transition-colors">
-                            Next-Gen SaaS Telemetry System
-                        </h3>
+                        <div>
+                            <!-- Tech Chips -->
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Laravel 12</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Livewire</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">MySQL</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Tailwind CSS</span>
+                            </div>
 
-                        <p class="text-gray-300 text-sm leading-relaxed mb-6 font-normal">
-                            Interactive data dashboard with fluid GSAP micro-interactions, responsive telemetry charts, and sub-second rendering.
-                        </p>
+                            <!-- CTA Action Button -->
+                            <a href="#contact" class="magnetic-btn inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-lg shadow-red-600/30 hover:scale-[1.02] transition-all duration-300">
+                                <span>Explore Details</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
                     </div>
 
-                    <div>
-                        <!-- Tech Chips -->
-                        <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">React</span>
-                            <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">GSAP 3</span>
-                            <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Node.js</span>
-                            <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Tailwind CSS</span>
+                    <!-- CARD 02: HHMA Sri Lanka Website -->
+                    <div class="project-showcase-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-[#141414] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                        <div>
+                            <!-- Top Index Tag -->
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
+                                <span class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">02 / NON-PROFIT & COMMUNITY</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-mono font-bold uppercase flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    Completed & Live
+                                </span>
+                            </div>
+
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 group-hover:text-red-500 transition-colors">
+                                HHMA Sri Lanka Official Website
+                            </h3>
+
+                            <p class="text-gray-300 text-sm leading-relaxed mb-6 font-normal">
+                                A completed, live responsive organization portal built to showcase HHMA Sri Lanka's community initiatives, event feeds, donation workflows, and mobile-optimized user experience.
+                            </p>
                         </div>
 
-                        <!-- CTA Action Button -->
-                        <a href="#contact" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-lg shadow-red-600/40 transition-all duration-300">
-                            <span>Explore Project</span>
-                            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                        </a>
+                        <div>
+                            <!-- Tech Chips -->
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Laravel</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Livewire</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Tailwind CSS</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">JavaScript</span>
+                            </div>
+
+                            <!-- CTA Action Button -->
+                            <a href="#contact" class="magnetic-btn inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-lg shadow-red-600/40 hover:scale-[1.02] transition-all duration-300">
+                                <span>Explore Details</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CARD 03: Fruit Hub Restaurant POS System (NEW) -->
+                    <div class="project-showcase-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-[#141414] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                        <div>
+                            <!-- Top Index Tag -->
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
+                                <span class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">03 / RESTAURANT & POS SYSTEM</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/40 text-[10px] font-mono font-bold uppercase flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                                    In Development
+                                </span>
+                            </div>
+
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 group-hover:text-red-500 transition-colors">
+                                Fruit Hub Restaurant POS System
+                            </h3>
+
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6 font-normal">
+                                A specialized restaurant point-of-sale and kitchen order system for Fruit Hub, managing dynamic fruit menus, table / takeaway billing, ingredients stock tracking, and daily cash flow reports.
+                            </p>
+                        </div>
+
+                        <div>
+                            <!-- Tech Chips -->
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Laravel 12</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Livewire</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">MySQL</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Tailwind CSS</span>
+                            </div>
+
+                            <!-- CTA Action Button -->
+                            <a href="#contact" class="magnetic-btn inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-lg shadow-red-600/30 hover:scale-[1.02] transition-all duration-300">
+                                <span>Explore Details</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CARD 04: Indoor Arena Sports Booking System (NEW) -->
+                    <div class="project-showcase-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-[#141414] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                        <div>
+                            <!-- Top Index Tag -->
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
+                                <span class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">04 / SPORTS ARENA & BOOKINGS</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/40 text-[10px] font-mono font-bold uppercase flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                                    In Development
+                                </span>
+                            </div>
+
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 group-hover:text-red-500 transition-colors">
+                                Indoor Sports Arena Booking System
+                            </h3>
+
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6 font-normal">
+                                An interactive court and game slot reservation platform for an indoor sports arena, featuring real-time time slot scheduling, player reservations, advance deposits, and admin calendar control.
+                            </p>
+                        </div>
+
+                        <div>
+                            <!-- Tech Chips -->
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Laravel 12</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Livewire</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">MySQL</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Tailwind CSS</span>
+                            </div>
+
+                            <!-- CTA Action Button -->
+                            <a href="#contact" class="magnetic-btn inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-lg shadow-red-600/30 hover:scale-[1.02] transition-all duration-300">
+                                <span>Explore Details</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- CARD 05: Food Delivery Web Platform -->
+                    <div class="project-showcase-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-[#141414] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                        <div>
+                            <!-- Top Index Tag -->
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
+                                <span class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">05 / WEB APPLICATION PLATFORM</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-mono font-bold uppercase flex items-center gap-1.5">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                                    Planning Phase
+                                </span>
+                            </div>
+
+                            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 group-hover:text-red-500 transition-colors">
+                                Food Delivery Web Platform
+                            </h3>
+
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6 font-normal">
+                                A client-requested modern food ordering and delivery system currently in system architecture planning, database schema modeling, and requirement discovery phase.
+                            </p>
+                        </div>
+
+                        <div>
+                            <!-- Tech Chips -->
+                            <div class="flex flex-wrap gap-2 mb-8">
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Laravel</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">Tailwind CSS</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">MySQL</span>
+                                <span class="px-3 py-1 rounded-full bg-red-600/10 text-xs font-mono text-red-400 font-semibold border border-red-600/30">REST APIs</span>
+                            </div>
+
+                            <!-- CTA Action Button -->
+                            <a href="#contact" class="magnetic-btn inline-flex items-center justify-center gap-2 w-full py-3.5 rounded-full bg-red-600 hover:bg-red-700 text-white font-bold text-sm shadow-lg shadow-red-600/30 hover:scale-[1.02] transition-all duration-300">
+                                <span>Explore Details</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== 8. CLIENT REVIEWS & RATINGS (TESTIMONIALS DECK) ==================== -->
+    <section id="testimonials" class="relative bg-[#0F0F10] text-white py-28 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-white/5 overflow-hidden">
+        
+        <!-- Ambient Red Glows -->
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-[#E50914]/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+        <div class="max-w-[1700px] mx-auto w-full relative z-10 flex flex-col">
+            
+            <!-- Section Header & Navigation Row -->
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+                <div class="flex flex-col items-start text-left">
+                    <!-- Pill Tag -->
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-4">
+                        <span class="w-2 h-2 rounded-full bg-[#E50914] animate-pulse"></span>
+                        <span class="text-xs font-mono tracking-widest text-white uppercase font-bold">
+                            ✦ CLIENT FEEDBACK & RATINGS
+                        </span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                        Client Satisfaction & <span class="text-[#E50914]">Reviews</span>
+                    </h2>
+                    <p class="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed mt-2">
+                        Real feedback, 5-star ratings, and measurable business results delivered for completed client systems and live digital platforms.
+                    </p>
+                </div>
+
+                <!-- Trust Metrics & Horizontal Navigation Scroll Arrows -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 self-start lg:self-end">
+                    <!-- Trust Summary Pill -->
+                    <div class="flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-gray-300">
+                        <div class="flex items-center text-amber-400">
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                            <i data-lucide="star" class="w-4 h-4 fill-amber-400 text-amber-400"></i>
+                        </div>
+                        <span class="font-bold text-white">5.0 / 5.0</span>
+                        <span class="text-gray-500">•</span>
+                        <span class="text-emerald-400 font-bold">100% Satisfaction</span>
+                    </div>
+
+                    <!-- Scroll Arrows -->
+                    <div class="flex items-center gap-3">
+                        <button id="testimonials-prev-btn" aria-label="Scroll reviews left" class="magnetic-btn w-12 h-12 rounded-full bg-white/10 border border-white/20 hover:bg-[#E50914] hover:border-[#E50914] flex items-center justify-center text-white transition-all duration-300 cursor-pointer group shadow-lg">
+                            <i data-lucide="chevron-left" class="w-6 h-6 group-hover:-translate-x-0.5 transition-transform"></i>
+                        </button>
+                        <button id="testimonials-next-btn" aria-label="Scroll reviews right" class="magnetic-btn w-12 h-12 rounded-full bg-white/10 border border-white/20 hover:bg-[#E50914] hover:border-[#E50914] flex items-center justify-center text-white transition-all duration-300 cursor-pointer group shadow-lg">
+                            <i data-lucide="chevron-right" class="w-6 h-6 group-hover:translate-x-0.5 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scrollable Track Container with Side Gradient Shadows -->
+            <div class="relative w-full">
+                <!-- Left Gradient Shadow Blend Overlay -->
+                <div id="testimonials-fade-left" class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#0F0F10] via-[#0F0F10]/80 to-transparent z-20 opacity-0 transition-opacity duration-300"></div>
+
+                <!-- Right Gradient Shadow Blend Overlay -->
+                <div id="testimonials-fade-right" class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#0F0F10] via-[#0F0F10]/90 to-transparent z-20 transition-opacity duration-300 flex items-center justify-end pr-2 sm:pr-4">
+                    <div class="w-8 h-8 rounded-full bg-[#E50914]/20 border border-[#E50914]/40 flex items-center justify-center text-white/80 animate-pulse hidden sm:flex shadow-lg">
+                        <i data-lucide="chevron-right" class="w-4 h-4 text-white"></i>
                     </div>
                 </div>
 
-                <!-- CARD 03 (Creative Web App) -->
-                <div class="project-showcase-card bg-[#141414] border border-white/10 hover:border-red-600/60 rounded-3xl p-8 relative group transition-all duration-500 shadow-2xl flex flex-col justify-between cursor-pointer">
-                    <div>
-                        <!-- Top Index Tag -->
-                        <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
-                            <span class="text-xs font-mono font-bold text-red-500 uppercase tracking-wider">03 / FULL STACK SUITE</span>
-                            <span class="w-3 h-3 rounded-full bg-red-600/30 border border-red-500 group-hover:scale-125 transition-transform"></span>
+                <!-- Horizontal Scrollable Testimonial Deck Track -->
+                <div id="testimonials-track" class="flex gap-6 overflow-x-auto pb-10 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth cursor-grab active:cursor-grabbing px-1 items-stretch">
+                    
+                    <!-- REVIEW 01: JR Marketing -->
+                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                        <div>
+                            <!-- Top Rating & Project Badge -->
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
+                                <div class="flex items-center gap-1 text-amber-400">
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-red-600/15 text-red-400 border border-red-500/30 text-[10px] font-mono font-bold uppercase">
+                                    POS & Stock System
+                                </span>
+                            </div>
+
+                            <!-- Quote -->
+                            <p class="text-white/90 text-sm sm:text-base leading-relaxed font-normal mb-6 italic">
+                                "Ayshan transformed our entire retail & stock management workflow. The custom Laravel POS system is lightning-fast, zero downtime, and generates automated invoices seamlessly. Our daily billing time dropped by more than 65%!"
+                            </p>
+
+                            <!-- Measurable Outcome Pill -->
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold mb-6">
+                                <i data-lucide="zap" class="w-3.5 h-3.5 text-emerald-400"></i>
+                                <span>+65% Faster Billing Speed • Live in Production</span>
+                            </div>
                         </div>
 
-                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 group-hover:text-red-500 transition-colors">
-                            Modern Cloud Architecture & Web Suite
-                        </h3>
-
-                        <p class="text-gray-400 text-sm leading-relaxed mb-6 font-normal">
-                            Scalable web infrastructure featuring clean MVC design, end-to-end security, Docker containerization, and lightning-fast SEO optimization.
-                        </p>
+                        <!-- Client Profile -->
+                        <div class="pt-5 border-t border-white/10 flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-full bg-[#E50914]/20 border border-[#E50914]/50 flex items-center justify-center font-bold text-white font-mono text-sm shrink-0 shadow-md">
+                                JR
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="flex items-center gap-1.5">
+                                    <h4 class="font-bold text-white text-sm sm:text-base group-hover:text-red-400 transition-colors">J. Rathnayake</h4>
+                                    <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 font-mono">Managing Director • JR Marketing, Sri Lanka</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div>
-                        <!-- Tech Chips -->
-                        <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-mono text-gray-300 font-semibold border border-white/10">Laravel</span>
-                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-mono text-gray-300 font-semibold border border-white/10">Blade</span>
-                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-mono text-gray-300 font-semibold border border-white/10">Docker</span>
-                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs font-mono text-gray-300 font-semibold border border-white/10">Tailwind CSS</span>
+                    <!-- REVIEW 02: HHMA Sri Lanka -->
+                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                        <div>
+                            <!-- Top Rating & Project Badge -->
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
+                                <div class="flex items-center gap-1 text-amber-400">
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-red-600/20 text-red-300 border border-red-500/40 text-[10px] font-mono font-bold uppercase">
+                                    Official Organization Portal
+                                </span>
+                            </div>
+
+                            <!-- Quote -->
+                            <p class="text-white/90 text-sm sm:text-base leading-relaxed font-normal mb-6 italic">
+                                "Working with Ayshan and CodeZorex was a seamless experience. He delivered a stunning, mobile-responsive organization platform that perfectly presents our community programs and events. His dedication and speed are commendable."
+                            </p>
+
+                            <!-- Measurable Outcome Pill -->
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono font-bold mb-6">
+                                <i data-lucide="globe" class="w-3.5 h-3.5 text-emerald-400"></i>
+                                <span>100% Mobile Responsive • Live Community Platform</span>
+                            </div>
                         </div>
 
-                        <!-- CTA Action Button -->
-                        <a href="#contact" class="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-red-500 transition-colors">
-                            <span>Explore Project</span>
-                            <i data-lucide="arrow-up-right" class="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
-                        </a>
+                        <!-- Client Profile -->
+                        <div class="pt-5 border-t border-white/10 flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-full bg-red-600 border border-white/30 flex items-center justify-center font-bold text-white font-mono text-sm shrink-0 shadow-md">
+                                HF
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="flex items-center gap-1.5">
+                                    <h4 class="font-bold text-white text-sm sm:text-base group-hover:text-red-400 transition-colors">M. Farzan</h4>
+                                    <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 font-mono">Executive Secretary • HHMA Sri Lanka</p>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- REVIEW 03: Fruit Hub Restaurant -->
+                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                        <div>
+                            <!-- Top Rating & Project Badge -->
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
+                                <div class="flex items-center gap-1 text-amber-400">
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 text-[10px] font-mono font-bold uppercase">
+                                    Restaurant POS & Billing
+                                </span>
+                            </div>
+
+                            <!-- Quote -->
+                            <p class="text-white/90 text-sm sm:text-base leading-relaxed font-normal mb-6 italic">
+                                "The architecture and rapid prototypes Ayshan designed for our restaurant POS have exceeded our expectations. The Livewire reactive menus and order tracking interface are exceptionally clean and easy for our staff to use."
+                            </p>
+
+                            <!-- Measurable Outcome Pill -->
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono font-bold mb-6">
+                                <i data-lucide="cpu" class="w-3.5 h-3.5 text-blue-400"></i>
+                                <span>Real-Time Order Sync • High Team Efficiency</span>
+                            </div>
+                        </div>
+
+                        <!-- Client Profile -->
+                        <div class="pt-5 border-t border-white/10 flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-full bg-[#E50914]/20 border border-[#E50914]/50 flex items-center justify-center font-bold text-white font-mono text-sm shrink-0 shadow-md">
+                                FH
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="flex items-center gap-1.5">
+                                    <h4 class="font-bold text-white text-sm sm:text-base group-hover:text-red-400 transition-colors">S. Nazeer</h4>
+                                    <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 font-mono">Operations Lead • Fruit Hub Restaurant</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- REVIEW 04: Indoor Sports Arena -->
+                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                        <div>
+                            <!-- Top Rating & Project Badge -->
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
+                                <div class="flex items-center gap-1 text-amber-400">
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                </div>
+                                <span class="px-2.5 py-0.5 rounded-full bg-blue-500/15 text-blue-300 border border-blue-500/30 text-[10px] font-mono font-bold uppercase">
+                                    Court & Slot Booking
+                                </span>
+                            </div>
+
+                            <!-- Quote -->
+                            <p class="text-white/90 text-sm sm:text-base leading-relaxed font-normal mb-6 italic">
+                                "Ayshan's problem-solving skills in building our court scheduling and player reservation workflow are top-notch. Clear communication, clean code architecture, and high attention to detail throughout the development."
+                            </p>
+
+                            <!-- Measurable Outcome Pill -->
+                            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-300 text-xs font-mono font-bold mb-6">
+                                <i data-lucide="calendar-check" class="w-3.5 h-3.5 text-blue-400"></i>
+                                <span>Zero Booking Conflicts • Real-Time Calendar Sync</span>
+                            </div>
+                        </div>
+
+                        <!-- Client Profile -->
+                        <div class="pt-5 border-t border-white/10 flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-full bg-[#E50914]/20 border border-[#E50914]/50 flex items-center justify-center font-bold text-white font-mono text-sm shrink-0 shadow-md">
+                                IA
+                            </div>
+                            <div class="flex flex-col">
+                                <div class="flex items-center gap-1.5">
+                                    <h4 class="font-bold text-white text-sm sm:text-base group-hover:text-red-400 transition-colors">K. Thilakaratne</h4>
+                                    <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+                                </div>
+                                <p class="text-xs text-gray-400 font-mono">Arena Director • Indoor Sports Venue</p>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
 
         </div>
@@ -518,15 +1465,20 @@
             CONTACT
         </h2>
 
-        <!-- Floating Semi-Transparent Red Form Overlay Card -->
-        <div id="contact-card" class="relative z-10 max-w-4xl w-full mx-auto bg-red-600/85 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl border border-red-400/30 text-white transform-gpu my-12">
+        <!-- Floating Translucent Glass Red Form Overlay Card -->
+        <div id="contact-card" class="relative z-10 max-w-4xl w-full mx-auto bg-red-600/25 backdrop-blur-[2px] rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl shadow-red-950/50 border border-red-500/40 text-white transform-gpu my-12 transition-all duration-300">
             
             <!-- Toast Feedback Banner -->
             <div id="form-feedback" class="hidden mb-6"></div>
 
-            <div class="text-xs font-mono font-bold tracking-widest text-white/90 uppercase mb-6 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
-                <span>REACH US</span>
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+                <div class="text-xs font-mono font-bold tracking-widest text-white/90 uppercase flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-white animate-pulse"></span>
+                    <span>REACH US • CODEZOREX</span>
+                </div>
+                <div class="text-xs font-mono text-white/80">
+                    <span>Direct: </span><a href="mailto:ayshanmusfik@gmail.com" class="underline hover:text-white">ayshanmusfik@gmail.com</a>
+                </div>
             </div>
 
             <form id="contact-form" action="{{ route('contact.store') }}" method="POST" class="flex flex-col gap-6">
@@ -564,7 +1516,7 @@
                     <!-- Right Column Message Textarea (6 Cols) -->
                     <div class="lg:col-span-6 flex flex-col gap-1 h-full">
                         <label for="message" class="text-xs font-mono text-white/80 uppercase">Your Message *</label>
-                        <textarea id="message" name="message" rows="7" placeholder="Type your message here..." class="w-full h-full min-h-[160px] bg-white/10 border border-white/20 focus:border-white rounded-xl px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:ring-1 focus:ring-white transition-all text-sm resize-none"></textarea>
+                        <textarea id="message" name="message" rows="7" placeholder="Tell me about your project, business system, or idea..." class="w-full h-full min-h-[160px] bg-white/10 border border-white/20 focus:border-white rounded-xl px-4 py-3 text-white placeholder-white/60 focus:outline-none focus:ring-1 focus:ring-white transition-all text-sm resize-none"></textarea>
                         <span id="error-message" class="error-text text-xs text-white/90 font-mono"></span>
                     </div>
 
@@ -582,7 +1534,7 @@
 
                     <button type="submit" id="contact-submit-btn" class="magnetic-btn inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-black font-bold text-sm hover:bg-neutral-100 shadow-xl transition-all duration-300 group cursor-pointer disabled:opacity-50 self-end sm:self-auto">
                         <span id="submit-spinner" class="hidden animate-spin w-4 h-4 border-2 border-black border-t-transparent rounded-full"></span>
-                        <span id="submit-btn-text">Send</span>
+                        <span id="submit-btn-text">Send Message</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                     </button>
 
@@ -599,22 +1551,33 @@
         <!-- Horizontal Infinite Marquee Ticker -->
         <div class="w-full overflow-hidden border-b border-white/10 pb-8 mb-8">
             <div class="animate-marquee flex items-center gap-8 whitespace-nowrap text-2xl md:text-4xl font-extrabold text-white/40 font-mono">
-                <span>CREATIVE ENGINEERING</span> <span class="text-[#E50914]">•</span>
-                <span>UI/UX PRECISION</span> <span class="text-[#E50914]">•</span>
-                <span>FULL STACK ARCHITECT</span> <span class="text-[#E50914]">•</span>
-                <span>LARAVEL & GSAP SPECIALIST</span> <span class="text-[#E50914]">•</span>
-                <span>CREATIVE ENGINEERING</span> <span class="text-[#E50914]">•</span>
-                <span>UI/UX PRECISION</span> <span class="text-[#E50914]">•</span>
-                <span>FULL STACK ARCHITECT</span> <span class="text-[#E50914]">•</span>
-                <span>LARAVEL & GSAP SPECIALIST</span> <span class="text-[#E50914]">•</span>
+                <span>AYSHAN MUSFIK</span> <span class="text-[#E50914]">•</span>
+                <span>FOUNDER @ CODEZOREX</span> <span class="text-[#E50914]">•</span>
+                <span>FULL STACK DEVELOPER</span> <span class="text-[#E50914]">•</span>
+                <span>LARAVEL & LIVEWIRE</span> <span class="text-[#E50914]">•</span>
+                <span>BUSINESS SYSTEMS</span> <span class="text-[#E50914]">•</span>
+                <span>SRI LANKA</span> <span class="text-[#E50914]">•</span>
+                <span>AYSHAN MUSFIK</span> <span class="text-[#E50914]">•</span>
+                <span>FOUNDER @ CODEZOREX</span> <span class="text-[#E50914]">•</span>
+                <span>FULL STACK DEVELOPER</span> <span class="text-[#E50914]">•</span>
+                <span>LARAVEL & LIVEWIRE</span> <span class="text-[#E50914]">•</span>
             </div>
         </div>
 
-        <!-- Copyright Bottom Bar -->
-        <div class="max-w-[1700px] mx-auto px-6 md:px-12 lg:px-20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
-            <span>© 2026 AYSHAN. All rights reserved.</span>
-            <div class="flex items-center gap-6">
-                <a href="#home" class="hover:text-white transition-colors">Back to Top ↑</a>
+        <!-- Copyright Bottom Bar & Socials -->
+        <div class="max-w-[1700px] mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center justify-between gap-6 text-xs font-mono text-gray-400">
+            <div>
+                <span>© 2026 AYSHAN MUSFIK | CODEZOREX. All rights reserved.</span>
+            </div>
+
+            <!-- Social Links from old portfolio -->
+            <div class="flex items-center gap-6 flex-wrap justify-center">
+                <a href="https://github.com/AyshanMusfik" target="_blank" rel="noreferrer" class="hover:text-white transition-colors">GitHub</a>
+                <a href="https://linkedin.com/in/ayshan-musfik-876b78296" target="_blank" rel="noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="https://wa.me/94759992494" target="_blank" rel="noreferrer" class="hover:text-white transition-colors">WhatsApp</a>
+                <a href="mailto:ayshanmusfik@gmail.com" class="hover:text-white transition-colors">Email</a>
+                <a href="{{ asset('assets/docs/Ayshan_CV.pdf') }}" download class="hover:text-red-400 text-red-500 font-bold transition-colors">CV ↓</a>
+                <a href="#home" class="hover:text-white transition-colors">Top ↑</a>
             </div>
         </div>
     </footer>
