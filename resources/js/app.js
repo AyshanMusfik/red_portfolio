@@ -201,42 +201,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // GSAP Pendulum Sway & Mouse 3D Tilt for ID Badge Card
     const cardFrame = document.getElementById('about-card-frame');
+    let swayTween = null;
+
     if (cardFrame) {
-        // Continuous Gentle Pendulum Sway Animation from top center pivot
-        const swayTween = gsap.to(cardFrame, {
+        // Continuous Gentle Pendulum Sway Animation from top center pivot with force3D
+        swayTween = gsap.to(cardFrame, {
             rotation: 2,
             duration: 3.5,
             repeat: -1,
             yoyo: true,
             ease: 'sine.inOut',
+            force3D: true,
             transformOrigin: 'top center'
         });
 
-        // Interactive 3D Parallax Mouse Tilt on Hover
-        cardFrame.addEventListener('mousemove', (e) => {
-            swayTween.pause();
-            const rect = cardFrame.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
+        // Only attach mousemove on non-touch desktop devices with fine pointers
+        if (window.matchMedia('(pointer: fine)').matches) {
+            cardFrame.addEventListener('mousemove', (e) => {
+                if (swayTween) swayTween.pause();
+                const rect = cardFrame.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
 
-            gsap.to(cardFrame, {
-                rotationY: x * 0.1,
-                rotationX: -y * 0.1,
-                transformPerspective: 1000,
-                duration: 0.3,
-                ease: 'power2.out'
+                gsap.to(cardFrame, {
+                    rotationY: x * 0.08,
+                    rotationX: -y * 0.08,
+                    transformPerspective: 1000,
+                    force3D: true,
+                    duration: 0.3,
+                    ease: 'power2.out'
+                });
             });
-        });
 
-        cardFrame.addEventListener('mouseleave', () => {
-            gsap.to(cardFrame, {
-                rotationY: 0,
-                rotationX: 0,
-                duration: 0.5,
-                ease: 'power2.out',
-                onComplete: () => swayTween.play()
+            cardFrame.addEventListener('mouseleave', () => {
+                gsap.to(cardFrame, {
+                    rotationY: 0,
+                    rotationX: 0,
+                    force3D: true,
+                    duration: 0.5,
+                    ease: 'power2.out',
+                    onComplete: () => {
+                        if (swayTween) swayTween.play();
+                    }
+                });
             });
-        });
+        }
     }
 
     // ScrollTrigger Gravity-Drop Card Animation on Leaving #about
@@ -247,23 +256,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 trigger: '#about',
                 start: 'bottom 80%',
                 end: 'bottom 20%',
-                scrub: 0.6,
+                scrub: 0.4,
                 fastScrollEnd: true,
-                preventOverlaps: true
+                preventOverlaps: true,
+                onEnter: () => {
+                    if (swayTween) swayTween.pause();
+                },
+                onLeaveBack: () => {
+                    if (swayTween) swayTween.play();
+                }
             }
         });
 
         cardDropTl.to('#about-card-frame', {
-            y: 350,
-            rotation: 28,
-            scale: 0.85,
+            y: 300,
+            rotation: 24,
+            scale: 0.88,
             opacity: 0,
+            force3D: true,
             transformOrigin: 'top right',
             ease: 'power1.in'
         }, 0)
         .to('#about-clip', {
             scale: 0.5,
             opacity: 0,
+            force3D: true,
             ease: 'power1.in'
         }, 0);
     }
@@ -723,20 +740,36 @@ document.addEventListener('DOMContentLoaded', () => {
     function initScrollAnimations() {
         const mm = gsap.matchMedia();
 
-        // 1. Hero Scale-Down Transition on Scroll
+        // 1. Hero Scale-Down Transition on Scroll (GPU-Accelerated)
         const heroSection = document.getElementById('home');
         if (heroSection) {
-            gsap.to(heroSection, {
-                scale: 0.94,
-                opacity: 0.6,
-                borderRadius: '32px',
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: heroSection,
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: 0.6
-                }
+            mm.add("(min-width: 1024px)", () => {
+                gsap.to(heroSection, {
+                    scale: 0.95,
+                    opacity: 0.7,
+                    force3D: true,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: heroSection,
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: 0.5
+                    }
+                });
+            });
+
+            mm.add("(max-width: 1023px)", () => {
+                gsap.to(heroSection, {
+                    opacity: 0.75,
+                    force3D: true,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: heroSection,
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: 0.3
+                    }
+                });
             });
         }
 
