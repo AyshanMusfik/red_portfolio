@@ -2,22 +2,28 @@
 
 // Ensure /tmp writable directories exist on Vercel Lambda
 $dirs = [
+    '/tmp/storage',
+    '/tmp/storage/framework',
+    '/tmp/storage/framework/views',
+    '/tmp/storage/framework/cache',
+    '/tmp/storage/framework/cache/data',
+    '/tmp/storage/framework/sessions',
+    '/tmp/storage/logs',
+    '/tmp/storage/app',
     '/tmp/views',
     '/tmp/cache',
     '/tmp/sessions',
     '/tmp/logs',
-    '/tmp/framework/views',
-    '/tmp/framework/cache',
-    '/tmp/framework/sessions'
 ];
 
 foreach ($dirs as $dir) {
     if (!is_dir($dir)) {
-        @mkdir($dir, 0755, true);
+        @mkdir($dir, 0777, true);
     }
 }
 
-putenv('VIEW_COMPILED_PATH=/tmp/views');
+putenv('VERCEL=1');
+putenv('VIEW_COMPILED_PATH=/tmp/storage/framework/views');
 putenv('APP_SERVICES_CACHE=/tmp/cache/services.php');
 putenv('APP_PACKAGES_CACHE=/tmp/cache/packages.php');
 putenv('APP_CONFIG_CACHE=/tmp/cache/config.php');
@@ -27,7 +33,16 @@ putenv('SESSION_DRIVER=cookie');
 putenv('CACHE_STORE=array');
 putenv('LOG_CHANNEL=stderr');
 
-$_ENV['VIEW_COMPILED_PATH'] = '/tmp/views';
+$_ENV['VERCEL'] = '1';
+$_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
+$_ENV['SESSION_DRIVER'] = 'cookie';
+$_ENV['CACHE_STORE'] = 'array';
+$_ENV['LOG_CHANNEL'] = 'stderr';
+
+if (empty($_ENV['APP_KEY'])) {
+    $_ENV['APP_KEY'] = 'base64:f0w5Kk7q0tByTXQyKWyqN7cQXr5j/s1ry2WlnE1/EM8=';
+    putenv('APP_KEY=base64:f0w5Kk7q0tByTXQyKWyqN7cQXr5j/s1ry2WlnE1/EM8=');
+}
 
 // Forward Vercel Serverless request to Laravel's public/index.php
 require __DIR__ . '/../public/index.php';
