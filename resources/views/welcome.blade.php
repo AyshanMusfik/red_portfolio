@@ -141,7 +141,7 @@
             </div>
 
             <div class="pt-3 mt-1 border-t border-white/10 flex items-center gap-3">
-                <a href="{{ asset('assets/docs/Ayshan_Musfik_Resume.pdf') }}" download class="flex-1 py-2.5 rounded-xl bg-white/10 border border-white/15 text-center text-xs font-bold text-white hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+                <a href="{{ asset('assets/docs/Ayshan_CV.pdf') }}" download class="flex-1 py-2.5 rounded-xl bg-white/10 border border-white/15 text-center text-xs font-bold text-white hover:bg-white/20 transition-all flex items-center justify-center gap-2">
                     <i data-lucide="download" class="w-3.5 h-3.5"></i>
                     <span>Download CV</span>
                 </a>
