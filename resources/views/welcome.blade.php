@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Ayshan Musfik | Founder @ CodeZorex | Full-Stack Developer</title>
     <meta name="description" content="Ayshan Musfik - Founder of CodeZorex & Full-Stack Developer specializing in Laravel, Livewire, Tailwind CSS, MySQL, and modern business systems.">
