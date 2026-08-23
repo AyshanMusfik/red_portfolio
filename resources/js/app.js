@@ -62,6 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Dynamic iOS Liquid Glass Navbar on Scroll
+    const navFloating = document.querySelector('.glass-liquid-nav');
+    if (navFloating) {
+        const handleNavScroll = () => {
+            if (window.scrollY > 40) {
+                navFloating.classList.add('is-scrolled');
+            } else {
+                navFloating.classList.remove('is-scrolled');
+            }
+        };
+        window.addEventListener('scroll', handleNavScroll, { passive: true });
+        handleNavScroll();
+    }
+
     // IntersectionObserver for Accurate Viewport ScrollSpy
     if (sections.length > 0 && navLinks.length > 0) {
         const observerOptions = {
