@@ -3,16 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    @if(app()->isProduction())
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    @endif
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Ayshan Musfik | Founder @ CodeZorex | Full-Stack Developer</title>
     <meta name="description" content="Ayshan Musfik - Founder of CodeZorex & Full-Stack Developer specializing in Laravel, Livewire, Tailwind CSS, MySQL, and modern business systems.">
     <meta name="author" content="Ayshan Musfik">
 
     <!-- Brand Favicon -->
-    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
-    <link rel="alternate icon" href="{{ asset('favicon.svg') }}">
-    <link rel="apple-touch-icon" href="{{ asset('favicon.svg') }}">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate icon" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/favicon.svg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -142,7 +144,7 @@
             </div>
 
             <div class="pt-3 mt-1 border-t border-white/10 flex items-center gap-3">
-                <a href="{{ asset('assets/docs/Ayshan_CV.pdf') }}" download class="flex-1 py-2.5 rounded-xl bg-white/10 border border-white/15 text-center text-xs font-bold text-white hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+                <a href="/assets/docs/Ayshan_CV.pdf" download class="flex-1 py-2.5 rounded-xl bg-white/10 border border-white/15 text-center text-xs font-bold text-white hover:bg-white/20 transition-all flex items-center justify-center gap-2">
                     <i data-lucide="download" class="w-3.5 h-3.5"></i>
                     <span>Download CV</span>
                 </a>
@@ -188,7 +190,7 @@
                     </a>
 
                     <!-- CTA 3: Download CV -->
-                    <a href="{{ asset('assets/docs/Ayshan_CV.pdf') }}" download class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2 md:px-6 md:py-4 rounded-full bg-white/15 border border-white/40 hover:bg-white/25 text-white font-bold text-xs md:text-base tracking-wide transition-all duration-300">
+                    <a href="/assets/docs/Ayshan_CV.pdf" download class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2 md:px-6 md:py-4 rounded-full bg-white/15 border border-white/40 hover:bg-white/25 text-white font-bold text-xs md:text-base tracking-wide transition-all duration-300">
                         <span>Download CV</span>
                     </a>
                 </div>
@@ -200,14 +202,14 @@
                 
                 <!-- LAYER A (Default Visible Static Image) -->
                 <img id="hero-img" 
-                     src="{{ asset('assets/hero-avatar.jpg') }}" 
+                     src="/assets/hero-avatar.jpg" 
                      class="w-full h-full object-cover object-bottom pointer-events-auto transition-opacity duration-500 z-10" 
                      alt="Ayshan Musfik Avatar" 
-                     onerror="this.src='{{ asset('assets/hero-avatar.png') }}'">
+                     onerror="this.src='/assets/hero-avatar.png'">
 
                 <!-- LAYER B (Default Hidden Video Element) -->
                 <video id="hero-video" 
-                       src="{{ asset('assets/intro-video.mp4') }}" 
+                       src="/assets/intro-video.mp4" 
                        playsinline 
                        class="w-full h-full object-cover object-bottom absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500 z-10">
                     Your browser does not support HTML5 video.
@@ -245,10 +247,10 @@
 
                 <!-- Tall Portrait Card Frame -->
                 <div id="about-card-frame" class="relative w-[280px] sm:w-[330px] md:w-[380px] lg:w-[410px] aspect-[3/4.2] bg-black border-4 md:border-[6px] border-black rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl shadow-black/60 transform-gpu cursor-pointer transition-all duration-300 -rotate-3 md:-rotate-4 origin-top-center">
-                    <img src="{{ asset('assets/hero-avatar.jpg') }}" 
+                    <img src="/assets/hero-avatar.jpg" 
                          alt="Ayshan Musfik" 
                          class="w-full h-full object-cover object-top"
-                         onerror="this.src='{{ asset('assets/hero-avatar.png') }}'">
+                         onerror="this.src='/assets/hero-avatar.png'">
                 </div>
 
             </div>
@@ -1582,7 +1584,7 @@
                 <a href="https://linkedin.com/in/ayshan-musfik-876b78296" target="_blank" rel="noreferrer" class="hover:text-white transition-colors">LinkedIn</a>
                 <a href="https://wa.me/94759992494" target="_blank" rel="noreferrer" class="hover:text-white transition-colors">WhatsApp</a>
                 <a href="mailto:ayshanmusfik@gmail.com" class="hover:text-white transition-colors">Email</a>
-                <a href="{{ asset('assets/docs/Ayshan_CV.pdf') }}" download class="hover:text-red-400 text-red-500 font-bold transition-colors">CV ↓</a>
+                <a href="/assets/docs/Ayshan_CV.pdf" download class="hover:text-red-400 text-red-500 font-bold transition-colors">CV ↓</a>
                 <a href="#home" class="hover:text-white transition-colors">Top ↑</a>
             </div>
         </div>
