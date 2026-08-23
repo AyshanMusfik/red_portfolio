@@ -491,7 +491,7 @@ document.addEventListener('DOMContentLoaded', () => {
     masterTl
         .fromTo('.nav-floating', 
             { y: -60, opacity: 0 }, 
-            { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' },
+            { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', clearProps: 'transform' },
             '-=0.3'
         )
         .fromTo('.hero-text-elem', 
