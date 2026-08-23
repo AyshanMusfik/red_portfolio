@@ -4,6 +4,27 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
+// Guard against empty strings in cloud environment variables (e.g., Vercel)
+$defaults = [
+    'SESSION_DRIVER' => 'file',
+    'CACHE_STORE' => 'file',
+    'LOG_CHANNEL' => 'stderr',
+    'FILESYSTEM_DISK' => 'local',
+    'QUEUE_CONNECTION' => 'sync',
+    'BROADCAST_CONNECTION' => 'log',
+    'APP_MAINTENANCE_DRIVER' => 'file',
+    'APP_ENV' => 'production',
+    'APP_DEBUG' => 'false',
+];
+
+foreach ($defaults as $key => $val) {
+    if (!isset($_ENV[$key]) || $_ENV[$key] === '' || $_ENV[$key] === null) {
+        $_ENV[$key] = $val;
+        $_SERVER[$key] = $val;
+        putenv("$key=$val");
+    }
+}
+
 $app = Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
         web: __DIR__.'/../routes/web.php',
