@@ -1,0 +1,16 @@
+.git
+.github
+.env
+.env.*
+!.env.example
+node_modules
+vendor
+tests
+.phpunit.result.cache
+npm-debug.log
+.vercel
+.vercelignore
+vercel.json
+Dockerfile
+docker-compose.yml
+README.md
