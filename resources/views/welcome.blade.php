@@ -160,37 +160,37 @@
     <section id="home" class="relative min-h-screen w-full flex items-end justify-between overflow-hidden bg-[#E50914] pt-24 sm:pt-28 pb-0 px-0 transition-all duration-300 origin-top">
         
         <!-- MAIN CONTAINER -->
-        <div class="relative z-10 w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-16 min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex flex-col lg:flex-row items-end justify-between pointer-events-none">
+        <div class="relative z-10 w-full max-w-[1700px] mx-auto px-4 sm:px-6 lg:px-16 min-h-[calc(100vh-5rem)] sm:min-h-[calc(100vh-6rem)] flex flex-col lg:flex-row items-start lg:items-end justify-between pointer-events-none">
             
             <!-- LEFT COLUMN: Typography & Action CTAs -->
-            <div class="w-full lg:w-5/12 xl:w-5/12 flex flex-col items-start text-left pb-6 md:pb-12 lg:pb-24 z-20 pointer-events-auto">
+            <div class="w-full lg:w-5/12 xl:w-5/12 flex flex-col items-start text-left pt-1 sm:pt-4 pb-4 md:pb-12 lg:pb-24 z-20 pointer-events-auto">
                 
                 <h1 class="hero-text-elem text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white tracking-tight leading-[1.1] md:leading-[1.05] mb-1">
                     Hi, I'm a
                 </h1>
 
-                <h2 class="hero-text-elem text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-stroke-white tracking-tight leading-[1.1] md:leading-[1.05] mb-3 md:mb-6">
+                <h2 class="hero-text-elem text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-stroke-white tracking-tight leading-[1.1] md:leading-[1.05] mb-2 sm:mb-3 md:mb-6">
                     Full Stack Developer
                 </h2>
 
-                <p class="hero-text-elem text-white/90 text-xs sm:text-sm md:text-xl max-w-[280px] sm:max-w-md md:max-w-lg font-medium leading-relaxed mb-4 md:mb-8">
+                <p class="hero-text-elem text-white/90 text-xs sm:text-sm md:text-xl max-w-[320px] sm:max-w-md md:max-w-lg font-medium leading-relaxed mb-3.5 sm:mb-4 md:mb-8">
                     Founder of <span class="font-bold underline decoration-white/40">CodeZorex</span> & Full-Stack Developer building modern web apps, scalable business systems, and clean UI/UX with Laravel, Livewire & Tailwind CSS.
                 </p>
 
                 <!-- Action Buttons -->
-                <div class="flex flex-row items-center gap-2.5 sm:gap-4 flex-wrap">
+                <div class="flex flex-row items-center gap-2 sm:gap-4 flex-wrap">
                     <!-- CTA 1: View My Work -->
-                    <a href="#projects" class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2 md:px-9 md:py-4 rounded-full bg-white text-black hover:bg-gray-100 font-bold text-xs md:text-base tracking-wide shadow-xl hover:scale-105 transition-all duration-300">
+                    <a href="#projects" class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2.5 md:px-9 md:py-4 rounded-full bg-white text-black hover:bg-gray-100 font-bold text-xs md:text-base tracking-wide shadow-xl hover:scale-105 transition-all duration-300">
                         <span>View My Work</span>
                     </a>
 
                     <!-- CTA 2: Contact Me -->
-                    <a href="#contact" class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2 md:px-9 md:py-4 rounded-full bg-black/50 border border-white/30 hover:bg-black/70 text-white font-bold text-xs md:text-base tracking-wide transition-all duration-300">
+                    <a href="#contact" class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2.5 md:px-9 md:py-4 rounded-full bg-black/50 border border-white/30 hover:bg-black/70 text-white font-bold text-xs md:text-base tracking-wide transition-all duration-300">
                         <span>Contact Me</span>
                     </a>
 
                     <!-- CTA 3: Download CV -->
-                    <a href="/assets/docs/Ayshan_CV.pdf" download class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2 md:px-6 md:py-4 rounded-full bg-white/15 border border-white/40 hover:bg-white/25 text-white font-bold text-xs md:text-base tracking-wide transition-all duration-300">
+                    <a href="/assets/docs/Ayshan_CV.pdf" download class="hero-cta-elem magnetic-btn inline-flex items-center justify-center px-4 py-2.5 md:px-6 md:py-4 rounded-full bg-white/15 border border-white/40 hover:bg-white/25 text-white font-bold text-xs md:text-base tracking-wide transition-all duration-300">
                         <span>Download CV</span>
                     </a>
                 </div>
@@ -198,12 +198,12 @@
             </div>
 
             <!-- RIGHT COLUMN / FULL-BLEED MEDIA CONTAINER -->
-            <div class="hero-media-container media-mask-fade absolute bottom-0 right-0 w-full md:w-[90vw] lg:w-[75vw] xl:w-[70vw] h-[48vh] sm:h-[55vh] md:h-[78vh] lg:h-[90vh] xl:h-[95vh] max-h-[980px] flex items-end justify-end pointer-events-none z-0">
+            <div class="hero-media-container media-mask-fade absolute bottom-0 right-0 w-full md:w-[90vw] lg:w-[75vw] xl:w-[70vw] h-[64vh] sm:h-[70vh] md:h-[78vh] lg:h-[90vh] xl:h-[95vh] max-h-[980px] flex items-end justify-center md:justify-end pointer-events-none z-0">
                 
                 <!-- LAYER A (Default Visible Static Image) -->
                 <img id="hero-img" 
                      src="/assets/hero-avatar.jpg" 
-                     class="w-full h-full object-cover object-bottom pointer-events-auto transition-opacity duration-500 z-10" 
+                     class="w-full h-full object-cover object-bottom scale-110 sm:scale-100 origin-bottom pointer-events-auto transition-opacity duration-500 z-10" 
                      alt="Ayshan Musfik Avatar" 
                      onerror="this.src='/assets/hero-avatar.png'">
 
@@ -211,20 +211,20 @@
                 <video id="hero-video" 
                        src="/assets/intro-video.mp4" 
                        playsinline 
-                       class="w-full h-full object-cover object-bottom absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500 z-10">
+                       class="w-full h-full object-cover object-bottom scale-110 sm:scale-100 origin-bottom absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-500 z-10">
                     Your browser does not support HTML5 video.
                 </video>
 
             </div>
 
             <!-- FLOATING "PLAY REEL" TRIGGER BUTTON -->
-            <div class="play-reel-trigger absolute bottom-4 sm:bottom-8 md:bottom-10 right-3 sm:right-8 lg:right-16 z-30 pointer-events-auto scale-75 sm:scale-90 md:scale-100 origin-bottom-right">
+            <div class="play-reel-trigger absolute bottom-4 sm:bottom-8 md:bottom-10 right-3 sm:right-8 lg:right-16 z-30 pointer-events-auto scale-80 sm:scale-90 md:scale-100 origin-bottom-right">
                 <button id="play-reel-btn" class="magnetic-btn group flex flex-col items-center gap-2 cursor-pointer">
-                    <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#E50914] border-2 border-white/50 shadow-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                        <i data-lucide="play" id="play-icon" class="w-8 h-8 fill-white translate-x-0.5"></i>
-                        <i data-lucide="pause" id="pause-icon" class="w-8 h-8 fill-white hidden"></i>
+                    <div class="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-[#E50914] border-2 border-white/50 shadow-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                        <i data-lucide="play" id="play-icon" class="w-7 h-7 sm:w-8 sm:h-8 fill-white translate-x-0.5"></i>
+                        <i data-lucide="pause" id="pause-icon" class="w-7 h-7 sm:w-8 sm:h-8 fill-white hidden"></i>
                     </div>
-                    <span id="play-reel-text" class="text-xs font-mono font-bold tracking-widest text-white uppercase drop-shadow-md">
+                    <span id="play-reel-text" class="text-[10px] sm:text-xs font-mono font-bold tracking-widest text-white uppercase drop-shadow-md">
                         PLAY REEL
                     </span>
                 </button>
@@ -553,19 +553,25 @@
         </div>
     </section>
 
-    <!-- ==================== 6. INTERACTIVE TECH STACK SECTION (HORIZONTAL SCROLL DECK) ==================== -->
-    <section id="skills" class="relative bg-[#111111] text-white py-24 sm:py-32 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-white/5 overflow-hidden">
+    <!-- ==================== 6. INTERACTIVE TECH STACK SECTION (HORIZONTAL SCROLL DECK - DARK RED THEME) ==================== -->
+    <section id="skills" class="relative bg-[#0B0B0C] text-white py-24 sm:py-32 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-white/5 overflow-hidden">
         
-        <!-- Ambient Red Glow Orb -->
-        <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-[#E50914]/10 rounded-full blur-[140px] pointer-events-none"></div>
+        <!-- Giant Screen-Filling Backdrop Typography (Same as Contact Section) -->
+        <h2 id="skills-bg-text" class="text-[21vw] font-black leading-none tracking-tighter text-white select-none pointer-events-none absolute inset-0 flex items-center justify-center z-0 uppercase opacity-95 transform-gpu">
+            SKILLS
+        </h2>
 
-        <div class="max-w-[1700px] mx-auto w-full flex flex-col">
+        <!-- Ambient Red Atmosphere Glow Orbs -->
+        <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[#E50914]/15 rounded-full blur-[160px] pointer-events-none"></div>
+        <div class="absolute -bottom-20 -left-20 w-[450px] h-[450px] bg-[#E50914]/10 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-[1700px] mx-auto w-full flex flex-col relative z-10">
             
             <!-- Section Header & Navigation Row -->
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-10">
                 <div class="flex flex-col items-start text-left">
                     <!-- Section Pill Header -->
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-4">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-md mb-4 shadow-sm">
                         <span class="w-2 h-2 rounded-full bg-[#E50914] animate-pulse"></span>
                         <span class="text-xs font-mono tracking-widest text-white uppercase font-bold">
                             ✦ TECHNICAL ARSENAL
@@ -593,372 +599,665 @@
 
             <!-- Category Filter Pills -->
             <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none">
-                <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-[#E50914] text-white border border-[#E50914]" data-category="all">All (18)</button>
+                <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-[#E50914] text-white border border-[#E50914] shadow-md shadow-red-600/30" data-category="all">All (18)</button>
                 <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10" data-category="backend">Backend & Core</button>
                 <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10" data-category="frontend">Frontend & UI</button>
                 <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10" data-category="database">Database</button>
                 <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10" data-category="tools">Tools & DevOps</button>
                 <button class="skill-filter-btn px-4 py-2 rounded-full text-xs font-mono font-bold uppercase transition-all duration-300 bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white border border-white/10" data-category="design">Design & Learning</button>
-            </div>
-
-            <!-- Scrollable Track Container with Side Gradient Shadows -->
-            <div class="relative w-full">
+            </div>            <!-- Infinite Marquee Two-Way Motion Deck Container -->
+            <div class="skills-marquee-container relative w-full overflow-hidden flex flex-col gap-4 sm:gap-6 py-4">
+                
                 <!-- Left Gradient Shadow Blend Overlay -->
-                <div id="skills-fade-left" class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent z-20 opacity-0 transition-opacity duration-300"></div>
+                <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#0B0B0C] via-[#0B0B0C]/90 to-transparent z-30"></div>
 
                 <!-- Right Gradient Shadow Blend Overlay -->
-                <div id="skills-fade-right" class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-36 bg-gradient-to-l from-[#111111] via-[#111111]/90 to-transparent z-20 transition-opacity duration-300 flex items-center justify-end pr-2 sm:pr-4">
+                <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#0B0B0C] via-[#0B0B0C]/90 to-transparent z-30 flex items-center justify-end pr-3">
                     <div class="w-8 h-8 rounded-full bg-[#E50914]/20 border border-[#E50914]/40 flex items-center justify-center text-white/80 animate-pulse hidden sm:flex shadow-lg">
-                        <i data-lucide="chevron-right" class="w-4 h-4 text-white"></i>
+                        <i data-lucide="sparkles" class="w-4 h-4 text-red-400"></i>
                     </div>
                 </div>
 
-                <!-- Horizontal Scrollable Card Deck -->
-                <div id="skills-track" class="flex gap-6 overflow-x-auto pb-8 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth cursor-grab active:cursor-grabbing px-1">
-                    
-                    <!-- 1. Laravel -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="backend">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="layers" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
-                                </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Core Stack</span>
+                <!-- ================= ROW 1: MARQUEE LEFT (ODD CARDS: 1, 3, 5, 7, 9, 11, 13, 15, 17) ================= -->
+                <div class="overflow-visible w-full py-6 sm:py-8">
+                    <div id="skills-row-1" class="skills-marquee-left flex items-center gap-4 px-2">
+                        
+                        <!-- 1. Laravel -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="backend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
                             </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Laravel 12</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Backend Framework</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">MVC architecture, Eloquent ORM, REST APIs, queues, and scalable business logic.</p>
-                        </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
-                        </div>
-                    </div>
-
-                    <!-- 2. Livewire -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="backend">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="zap" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">01</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="layers" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Core Stack</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Laravel 12</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">MVC architecture, Eloquent ORM, REST APIs, and queues.</p>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Full-Stack</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Livewire 3</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Full-Stack Reactive UI</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Real-time reactive frontend components without leaving standard PHP & Blade.</p>
-                        </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
-                        </div>
-                    </div>
-
-                    <!-- 3. PHP -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="backend">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="code-2" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Language</span>
                             </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">PHP 8.x</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Server Programming</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Object-oriented programming, modern attributes, strong types, and robust architectures.</p>
                         </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
-                        </div>
-                    </div>
 
-                    <!-- 4. Tailwind CSS -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="frontend">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="palette" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                        <!-- 3. PHP -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="backend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">03</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="code-2" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Language</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">PHP 8.x</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Object-oriented programming, attributes & strong types.</p>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Styling</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Tailwind CSS</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Design Systems</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Rapid responsive styling, dark modes, animations, custom theme tokens, and glassmorphism.</p>
-                        </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Expert</span>
-                        </div>
-                    </div>
-
-                    <!-- 5. JavaScript -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="frontend">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="terminal" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Frontend</span>
                             </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">JavaScript</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">ES6+ & Interactivity</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Async/await, AJAX fetch, DOM animations, event listeners, and interactive UI logic.</p>
                         </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Proficient</span>
-                        </div>
-                    </div>
 
-                    <!-- 6. MySQL -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="database">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="database" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                        <!-- 5. JavaScript -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="frontend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">05</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="terminal" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Frontend</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">JavaScript</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Async/await, AJAX fetch, DOM animations & event handling.</p>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Database</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">MySQL</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Relational Database</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Normalized schema design, foreign keys, query optimization, indexing, and migrations.</p>
-                        </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
-                        </div>
-                    </div>
-
-                    <!-- 7. SQL Queries -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="database">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="hard-drive" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Proficient</span>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Query Engine</span>
                             </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">SQL Queries</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Data Operations</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Complex joins, aggregates, transactions, reporting queries, and data integrity.</p>
                         </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Proficient</span>
-                        </div>
-                    </div>
 
-                    <!-- 8. HTML5 -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="frontend">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="layout-template" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                        <!-- 7. SQL Queries -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="database">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">07</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="hard-drive" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Query Engine</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">SQL Queries</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Complex joins, aggregates, transactions & data integrity.</p>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Markup</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">HTML5</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Semantic Structure</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Accessible, SEO-compliant semantic structure, meta schemas, and responsive layouts.</p>
-                        </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Expert</span>
-                        </div>
-                    </div>
-
-                    <!-- 9. CSS3 -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="frontend">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="sparkles" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Proficient</span>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Styling</span>
                             </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">CSS3</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Animations & Layouts</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Flexbox, CSS Grid, keyframe animations, media queries, and modern fluid typography.</p>
                         </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Expert</span>
-                        </div>
-                    </div>
 
-                    <!-- 10. GitHub -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="tools">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="git-pull-request" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                        <!-- 9. CSS3 -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="frontend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">09</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Styling</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">CSS3</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Flexbox, CSS Grid, keyframes, fluid layouts & glassmorphism.</p>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">DevOps</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">GitHub</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Version Control & CI/CD</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Repository management, GitHub Actions, pull requests, automated builds, and collaboration.</p>
-                        </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
-                        </div>
-                    </div>
-
-                    <!-- 11. Git CLI -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="tools">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="git-branch" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Expert</span>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">VCS</span>
                             </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Git CLI</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Branching & Tracking</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Branching workflows, rebasing, commit strategies, and team code management.</p>
                         </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
-                        </div>
-                    </div>
 
-                    <!-- 12. VS Code -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="tools">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="laptop" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                        <!-- 11. Git CLI -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="tools">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">11</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="git-branch" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">VCS</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Git CLI</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Branching workflows, rebasing, merge conflict resolution.</p>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">IDE</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">VS Code</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Development Environment</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Tailored developer tooling, PHP Intelephense, Laravel extensions, and debugger.</p>
-                        </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Expert</span>
-                        </div>
-                    </div>
-
-                    <!-- 13. Figma -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="design">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="layout" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Design</span>
                             </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Figma</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">UI/UX & Prototyping</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Component libraries, auto-layout, interactive prototypes, and design handoffs.</p>
                         </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
-                        </div>
-                    </div>
 
-                    <!-- 14. REST APIs -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="backend">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="cpu" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                        <!-- 13. Figma -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="design">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">13</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="layout" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Design</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Figma</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Component libraries, auto-layout & interactive prototypes.</p>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Integration</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">RESTful APIs</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Endpoint Architecture</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">JSON APIs, rate limiting, token authentication (Sanctum), and third-party integrations.</p>
-                        </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
-                        </div>
-                    </div>
-
-                    <!-- 15. React -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="design">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="component" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Learning</span>
                             </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">React.js</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Frontend Library</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Component architecture, JSX, hooks, state management, and modern SPA principles.</p>
                         </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-red-400 font-bold">Learning</span>
-                        </div>
-                    </div>
 
-                    <!-- 16. TypeScript -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="design">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="file-code" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                        <!-- 15. React -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="design">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">15</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="component" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Learning</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">React.js</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Component architecture, JSX, hooks & state management.</p>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Learning</span>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">TypeScript</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Typed JavaScript</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Static typing, interface contracts, generics, and enterprise front-end stability.</p>
-                        </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-red-400 font-bold">Learning</span>
-                        </div>
-                    </div>
-
-                    <!-- 17. Docker -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="tools">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="box" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Learning</span>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Containers</span>
                             </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Docker</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">Containerization</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Docker Compose, reproducible dev environments, and consistent production deployment.</p>
                         </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Proficient</span>
-                        </div>
-                    </div>
 
-                    <!-- 18. Postman -->
-                    <div class="skill-item flex-none w-[260px] sm:w-[280px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-white/10 hover:border-[#E50914]/60 rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#E50914]/25 group cursor-pointer snap-start" data-category="tools">
-                        <div>
-                            <div class="flex items-center justify-between mb-5">
-                                <div class="w-14 h-14 rounded-2xl bg-[#E50914]/10 border border-[#E50914]/30 flex items-center justify-center group-hover:scale-110 group-hover:bg-[#E50914] transition-all duration-300 shadow-md shadow-[#E50914]/10">
-                                    <i data-lucide="send" class="w-7 h-7 text-[#E50914] group-hover:text-white transition-colors duration-300"></i>
+                        <!-- 17. Docker -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="tools">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">17</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="box" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Containers</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Docker</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Docker Compose & reproducible development environments.</p>
                                 </div>
-                                <span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300 text-[10px] font-mono font-bold uppercase tracking-wider group-hover:border-[#E50914]/40 group-hover:text-red-300 transition-colors">Testing</span>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Proficient</span>
+                                </div>
                             </div>
-                            <h3 class="text-xl font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Postman</h3>
-                            <p class="text-xs font-mono text-gray-400 uppercase tracking-wider mb-3">API Testing & Telemetry</p>
-                            <p class="text-xs text-gray-400 leading-relaxed">Automated request collections, auth tokens, schema verification, and endpoint load testing.</p>
                         </div>
-                        <div class="pt-4 mt-5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-gray-400">
-                            <span>Proficiency</span>
-                            <span class="text-white font-bold group-hover:text-red-400 transition-colors">Advanced</span>
-                        </div>
-                    </div>
 
+                        <!-- DUPLICATE SET 1 FOR SEAMLESS INFINITE LOOP -->
+                        <!-- 1. Laravel (dup) -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" aria-hidden="true" data-category="backend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">01</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="layers" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Core Stack</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Laravel 12</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">MVC architecture, Eloquent ORM, REST APIs, and queues.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. PHP (dup) -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" aria-hidden="true" data-category="backend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">03</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="code-2" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Language</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">PHP 8.x</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Object-oriented programming, attributes & strong types.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. JavaScript (dup) -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" aria-hidden="true" data-category="frontend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">05</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="terminal" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Frontend</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">JavaScript</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Async/await, AJAX fetch, DOM animations & event handling.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Proficient</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. SQL Queries (dup) -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" aria-hidden="true" data-category="database">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">07</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="hard-drive" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Query Engine</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">SQL Queries</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Complex joins, aggregates, transactions & data integrity.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Proficient</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 9. CSS3 (dup) -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" aria-hidden="true" data-category="frontend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">09</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Styling</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">CSS3</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Flexbox, CSS Grid, keyframes, fluid layouts & glassmorphism.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Expert</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
+
+                <!-- ================= ROW 2: MARQUEE RIGHT (EVEN CARDS: 2, 4, 6, 8, 10, 12, 14, 16, 18) ================= -->
+                <div class="overflow-visible w-full py-6 sm:py-8">
+                    <div id="skills-row-2" class="skills-marquee-right flex items-center gap-4 px-2">
+                        
+                        <!-- 2. Livewire -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="backend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">02</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="zap" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Full-Stack</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Livewire 3</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Real-time reactive frontend components in PHP & Blade.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Tailwind CSS -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="frontend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">04</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="palette" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Styling</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Tailwind CSS</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Rapid responsive styling, dark modes, animations & tokens.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Expert</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. MySQL -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="database">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">06</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="database" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Database</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">MySQL</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Schema design, query optimization, indexing & migrations.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 8. HTML5 -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="frontend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">08</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="layout-template" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Markup</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">HTML5</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Accessible, SEO-compliant semantic structure & meta tags.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Expert</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 10. GitHub -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="tools">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">10</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="git-pull-request" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">DevOps</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">GitHub</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Repositories, GitHub Actions, pull requests & CI/CD workflows.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 12. VS Code -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="tools">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">12</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="laptop" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">IDE</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">VS Code</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">PHP Intelephense, Laravel extensions, debugging & snippets.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Expert</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 14. REST APIs -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="backend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">14</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="cpu" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Integration</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">RESTful APIs</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">JSON APIs, rate limiting, Sanctum auth & integrations.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 16. TypeScript -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="design">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">16</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="file-code" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Learning</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">TypeScript</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Static typing, interface contracts & frontend stability.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Learning</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 18. Postman -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" data-category="tools">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">18</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="send" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Testing</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Postman</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Request collections, schema verification & endpoint testing.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DUPLICATE SET 2 FOR SEAMLESS INFINITE LOOP -->
+                        <!-- 2. Livewire (dup) -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" aria-hidden="true" data-category="backend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">02</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="zap" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Full-Stack</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Livewire 3</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Real-time reactive frontend components in PHP & Blade.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. Tailwind CSS (dup) -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" aria-hidden="true" data-category="frontend">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">04</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="palette" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Styling</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">Tailwind CSS</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Rapid responsive styling, dark modes, animations & tokens.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Expert</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. MySQL (dup) -->
+                        <div class="skill-item flex-none w-[200px] sm:w-[220px] md:w-[230px] bg-[#141418] border-2 border-[#E50914]/80 hover:border-[#E50914] rounded-2xl overflow-hidden shadow-lg shadow-black/40 flex flex-col justify-between cursor-pointer" aria-hidden="true" data-category="database">
+                            <div class="w-full bg-[#E50914] py-1.5 flex items-center justify-center relative shadow-sm">
+                                <div class="w-2.5 h-2.5 rounded-full bg-white shadow-inner"></div>
+                            </div>
+                            <div class="p-3.5 sm:p-4 flex flex-col justify-between flex-1 bg-gradient-to-b from-[#18181d] to-[#121215]">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="font-serif italic text-xs font-bold text-white/40">06</span>
+                                        <div class="flex items-center gap-1.5">
+                                            <i data-lucide="database" class="w-3.5 h-3.5 text-[#E50914]"></i>
+                                            <span class="px-2 py-0.5 rounded-full bg-[#E50914]/15 text-red-300 text-[9px] font-mono font-bold uppercase tracking-wider border border-[#E50914]/30">Database</span>
+                                        </div>
+                                    </div>
+                                    <h3 class="text-sm sm:text-base font-extrabold text-white mb-1 group-hover:text-red-400 transition-colors">MySQL</h3>
+                                    <p class="text-[11px] text-gray-400 leading-snug line-clamp-2">Schema design, query optimization, indexing & migrations.</p>
+                                </div>
+                                <div class="pt-2 mt-2.5 border-t border-white/10 flex items-center justify-between text-[10px] font-mono text-gray-400">
+                                    <span>Proficiency</span>
+                                    <span class="text-red-400 font-bold">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -967,6 +1266,11 @@
     <!-- ==================== 7. INTERACTIVE 3D GLASS SHOWCASE & HORIZONTAL DECK (PROJECTS) ==================== -->
     <section id="projects" class="relative bg-[#0A0A0A] text-white py-28 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-white/5 overflow-hidden">
         
+        <!-- Giant Screen-Filling Backdrop Typography (Same as Contact Section) -->
+        <h2 id="projects-bg-text" class="text-[21vw] font-black leading-none tracking-tighter text-white select-none pointer-events-none absolute inset-0 flex items-center justify-center z-0 uppercase opacity-95 transform-gpu">
+            PROJECTS
+        </h2>
+
         <!-- Ambient Red Backdrop Glow Orb -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-red-600/10 rounded-full blur-[140px] pointer-events-none"></div>
 
@@ -1216,6 +1520,11 @@
     <!-- ==================== 8. CLIENT REVIEWS & RATINGS (TESTIMONIALS DECK) ==================== -->
     <section id="testimonials" class="relative bg-[#0F0F10] text-white py-28 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-white/5 overflow-hidden">
         
+        <!-- Giant Screen-Filling Backdrop Typography (Same as Contact Section) -->
+        <h2 id="testimonials-bg-text" class="text-[21vw] font-black leading-none tracking-tighter text-white select-none pointer-events-none absolute inset-0 flex items-center justify-center z-0 uppercase opacity-95 transform-gpu">
+            REVIEWS
+        </h2>
+
         <!-- Ambient Red Glows -->
         <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[550px] h-[550px] bg-[#E50914]/10 rounded-full blur-[150px] pointer-events-none"></div>
 
@@ -1284,7 +1593,7 @@
                 <div id="testimonials-track" class="flex gap-6 overflow-x-auto pb-10 pt-2 scrollbar-none snap-x snap-mandatory scroll-smooth cursor-grab active:cursor-grabbing px-1 items-stretch">
                     
                     <!-- REVIEW 01: JR Marketing -->
-                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-[#121215]/95 backdrop-blur-2xl border border-red-600/40 hover:border-[#E50914] rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
                         <div>
                             <!-- Top Rating & Project Badge -->
                             <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
@@ -1328,7 +1637,7 @@
                     </div>
 
                     <!-- REVIEW 02: HHMA Sri Lanka -->
-                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-[#121215]/95 backdrop-blur-2xl border border-red-600/40 hover:border-[#E50914] rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
                         <div>
                             <!-- Top Rating & Project Badge -->
                             <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
@@ -1372,7 +1681,7 @@
                     </div>
 
                     <!-- REVIEW 03: Fruit Hub Restaurant -->
-                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-[#121215]/95 backdrop-blur-2xl border border-red-600/40 hover:border-[#E50914] rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
                         <div>
                             <!-- Top Rating & Project Badge -->
                             <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">
@@ -1416,7 +1725,7 @@
                     </div>
 
                     <!-- REVIEW 04: Indoor Sports Arena -->
-                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-gradient-to-b from-white/[0.07] to-white/[0.02] border border-red-600/30 hover:border-red-500 rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
+                    <div class="testimonial-card flex-none w-[320px] sm:w-[380px] md:w-[420px] bg-[#121215]/95 backdrop-blur-2xl border border-red-600/40 hover:border-[#E50914] rounded-3xl p-7 sm:p-8 relative group transition-all duration-500 shadow-2xl hover:shadow-2xl hover:shadow-red-600/30 hover:-translate-y-2 flex flex-col justify-between cursor-pointer snap-start">
                         <div>
                             <!-- Top Rating & Project Badge -->
                             <div class="flex items-center justify-between mb-6 pb-4 border-b border-red-600/20">

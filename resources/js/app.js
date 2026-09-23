@@ -40,6 +40,17 @@ window.lenis = lenis;
 window.gsap = gsap;
 window.ScrollTrigger = ScrollTrigger;
 
+// Ensure ScrollTrigger recalculates accurately when media, fonts, and layout finish loading
+window.addEventListener('load', () => {
+    ScrollTrigger.refresh();
+});
+
+if (document.fonts) {
+    document.fonts.ready.then(() => {
+        ScrollTrigger.refresh();
+    });
+}
+
 // Navigation & ScrollSpy Setup
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -838,76 +849,138 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
         }
+
+        // 3. Skills Giant Background Typography Scroll Parallax Motion
+        const skillsSection = document.getElementById('skills');
+        const skillsBgText = document.getElementById('skills-bg-text');
+
+        if (skillsSection && skillsBgText) {
+            gsap.fromTo(skillsBgText, 
+                { 
+                    yPercent: -20, 
+                    scale: 1.2, 
+                    opacity: 0.9
+                }, 
+                { 
+                    yPercent: 20, 
+                    scale: 0.95, 
+                    opacity: 0.95, 
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: skillsSection,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1.2
+                    }
+                }
+            );
+        }
+
+        // 4. Projects Giant Background Typography Scroll Parallax Motion
+        const projectsSection = document.getElementById('projects');
+        const projectsBgText = document.getElementById('projects-bg-text');
+
+        if (projectsSection && projectsBgText) {
+            gsap.fromTo(projectsBgText, 
+                { 
+                    yPercent: -20, 
+                    scale: 1.2, 
+                    opacity: 0.9
+                }, 
+                { 
+                    yPercent: 20, 
+                    scale: 0.95, 
+                    opacity: 0.95, 
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: projectsSection,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1.2
+                    }
+                }
+            );
+        }
+
+        // 5. Reviews / Testimonials Giant Background Typography Scroll Parallax Motion
+        const testimonialsSection = document.getElementById('testimonials');
+        const testimonialsBgText = document.getElementById('testimonials-bg-text');
+
+        if (testimonialsSection && testimonialsBgText) {
+            gsap.fromTo(testimonialsBgText, 
+                { 
+                    yPercent: -20, 
+                    scale: 1.2, 
+                    opacity: 0.9
+                }, 
+                { 
+                    yPercent: 20, 
+                    scale: 0.95, 
+                    opacity: 0.95, 
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: testimonialsSection,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1.2
+                    }
+                }
+            );
+        }
+
+        // 6. Contact Giant Background Typography Scroll Parallax Motion
+        const contactSection = document.getElementById('contact');
+        const contactBgText = document.getElementById('contact-bg-text');
+
+        if (contactSection && contactBgText) {
+            gsap.fromTo(contactBgText, 
+                { 
+                    yPercent: -20, 
+                    scale: 1.2, 
+                    opacity: 0.9
+                }, 
+                { 
+                    yPercent: 20, 
+                    scale: 0.95, 
+                    opacity: 0.95, 
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: contactSection,
+                        start: 'top bottom',
+                        end: 'bottom top',
+                        scrub: 1.2
+                    }
+                }
+            );
+        }
     }
 
-    // ==================== HORIZONTAL SKILLS TRACK INTERACTION ====================
-    const skillsTrack = document.getElementById('skills-track');
+    // ==================== HORIZONTAL SKILLS 2-WAY MARQUEE INTERACTION ====================
+    const skillsRow1 = document.getElementById('skills-row-1');
+    const skillsRow2 = document.getElementById('skills-row-2');
     const skillsPrevBtn = document.getElementById('skills-prev-btn');
     const skillsNextBtn = document.getElementById('skills-next-btn');
-    const skillFadeLeft = document.getElementById('skills-fade-left');
-    const skillFadeRight = document.getElementById('skills-fade-right');
     const skillFilterBtns = document.querySelectorAll('.skill-filter-btn');
     const skillItems = document.querySelectorAll('.skill-item');
+    const skillsMarqueeContainer = document.querySelector('.skills-marquee-container');
 
-    if (skillsTrack) {
-        // Update Side Fade Shadow Overlays based on scroll position
-        const updateEdgeFades = () => {
-            const maxScroll = skillsTrack.scrollWidth - skillsTrack.clientWidth;
-            const scrollPos = skillsTrack.scrollLeft;
-
-            if (skillFadeLeft) {
-                skillFadeLeft.style.opacity = scrollPos > 15 ? '1' : '0';
-            }
-            if (skillFadeRight) {
-                skillFadeRight.style.opacity = scrollPos >= maxScroll - 15 ? '0' : '1';
-            }
-        };
-
-        skillsTrack.addEventListener('scroll', updateEdgeFades, { passive: true });
-        // Initial check
-        setTimeout(updateEdgeFades, 200);
-
-        // Arrow Buttons Navigation with smooth step
-        if (skillsPrevBtn) {
+    if (skillsMarqueeContainer) {
+        // Arrow Buttons Navigation (Pause and nudge animation)
+        if (skillsPrevBtn && skillsNextBtn) {
             skillsPrevBtn.addEventListener('click', () => {
-                skillsTrack.scrollBy({ left: -340, behavior: 'smooth' });
-                setTimeout(updateEdgeFades, 350);
+                if (skillsRow1 && skillsRow2) {
+                    gsap.to(skillsRow1, { x: '+=150', duration: 0.5, ease: 'power2.out' });
+                    gsap.to(skillsRow2, { x: '-=150', duration: 0.5, ease: 'power2.out' });
+                }
             });
-        }
 
-        if (skillsNextBtn) {
             skillsNextBtn.addEventListener('click', () => {
-                skillsTrack.scrollBy({ left: 340, behavior: 'smooth' });
-                setTimeout(updateEdgeFades, 350);
+                if (skillsRow1 && skillsRow2) {
+                    gsap.to(skillsRow1, { x: '-=150', duration: 0.5, ease: 'power2.out' });
+                    gsap.to(skillsRow2, { x: '+=150', duration: 0.5, ease: 'power2.out' });
+                }
             });
         }
-
-        // Drag to scroll functionality
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        skillsTrack.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - skillsTrack.offsetLeft;
-            scrollLeft = skillsTrack.scrollLeft;
-        });
-
-        skillsTrack.addEventListener('mouseleave', () => {
-            isDown = false;
-        });
-
-        skillsTrack.addEventListener('mouseup', () => {
-            isDown = false;
-        });
-
-        skillsTrack.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - skillsTrack.offsetLeft;
-            const walk = (x - startX) * 1.6;
-            skillsTrack.scrollLeft = scrollLeft - walk;
-        });
 
         // Category Filter Switcher
         skillFilterBtns.forEach((btn) => {
@@ -916,27 +989,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Update active pill button style
                 skillFilterBtns.forEach((b) => {
-                    b.classList.remove('bg-[#E50914]', 'text-white', 'border-[#E50914]');
-                    b.classList.add('bg-white/5', 'text-gray-300', 'border-white/10');
+                    b.classList.remove('bg-[#E50914]', 'text-white', 'border-[#E50914]', 'shadow-md', 'shadow-red-600/30');
+                    b.classList.add('bg-white/5', 'hover:bg-white/10', 'text-gray-300', 'border-white/10');
                 });
 
-                btn.classList.remove('bg-white/5', 'text-gray-300', 'border-white/10');
-                btn.classList.add('bg-[#E50914]', 'text-white', 'border-[#E50914]');
+                btn.classList.remove('bg-white/5', 'hover:bg-white/10', 'text-gray-300', 'border-white/10');
+                btn.classList.add('bg-[#E50914]', 'text-white', 'border-[#E50914]', 'shadow-md', 'shadow-red-600/30');
 
                 // Filter cards with smooth entrance
                 skillItems.forEach((item) => {
                     const itemCat = item.dataset.category;
                     if (category === 'all' || itemCat === category) {
                         item.style.display = 'flex';
-                        gsap.fromTo(item, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 0.3 });
+                        gsap.fromTo(item, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35 });
                     } else {
                         item.style.display = 'none';
                     }
                 });
 
-                // Reset scroll to beginning and update edge fades
-                skillsTrack.scrollTo({ left: 0, behavior: 'smooth' });
-                setTimeout(updateEdgeFades, 300);
+                // If specific category is selected, pause continuous animation for clear viewing
+                if (category !== 'all') {
+                    if (skillsRow1) skillsRow1.style.animationPlayState = 'paused';
+                    if (skillsRow2) skillsRow2.style.animationPlayState = 'paused';
+                } else {
+                    if (skillsRow1) skillsRow1.style.animationPlayState = '';
+                    if (skillsRow2) skillsRow2.style.animationPlayState = '';
+                }
 
                 // Refresh Lucide Icons
                 createIcons({ icons });
